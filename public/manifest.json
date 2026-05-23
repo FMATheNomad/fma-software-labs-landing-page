@@ -1,0 +1,21 @@
+{
+  "name": "FMA Software Labs",
+  "short_name": "FMA Labs",
+  "description": "AI-Native Micro-SaaS & Micro-GaaS Ecosystem",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "icons": [
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

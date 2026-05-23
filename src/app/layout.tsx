@@ -55,6 +55,15 @@ export const metadata: Metadata = {
     follow: true,
   },
   metadataBase: new URL("https://fmasoftwarelabs.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo192.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/logo192.png" }],
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
