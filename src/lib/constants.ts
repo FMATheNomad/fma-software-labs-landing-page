@@ -85,7 +85,7 @@ export const promptProducts = [
       gumroad: "https://fmasoftwarelabs.gumroad.com/l/python-ai-debug-toolkit",
       payhip: "https://payhip.com/FMASoftwareLabs/product/python-ai-debug-toolkit",
     },
-    price: "$12",
+    price: "$5",
     image: "/assets/products/python-debug-toolkit.png",
   },
   {
@@ -98,7 +98,7 @@ export const promptProducts = [
       gumroad: "https://fmasoftwarelabs.gumroad.com/l/js-ai-debug-toolkit",
       payhip: "https://payhip.com/FMASoftwareLabs/product/js-ai-debug-toolkit",
     },
-    price: "$12",
+    price: "$5",
     image: "/assets/products/js-debug-toolkit.png",
   },
   {
@@ -111,7 +111,7 @@ export const promptProducts = [
       gumroad: "https://fmasoftwarelabs.gumroad.com/l/ts-ai-debug-toolkit",
       payhip: "https://payhip.com/FMASoftwareLabs/product/ts-ai-debug-toolkit",
     },
-    price: "$12",
+    price: "$5",
     image: "/assets/products/ts-debug-toolkit.png",
   },
   {
@@ -124,7 +124,7 @@ export const promptProducts = [
       gumroad: "https://fmasoftwarelabs.gumroad.com/l/go-ai-debug-toolkit",
       payhip: "https://payhip.com/FMASoftwareLabs/product/go-ai-debug-toolkit",
     },
-    price: "$12",
+    price: "$5",
     image: "/assets/products/go-debug-toolkit.png",
   },
   {
@@ -137,7 +137,7 @@ export const promptProducts = [
       gumroad: "https://fmasoftwarelabs.gumroad.com/l/java-ai-debug-toolkit",
       payhip: "https://payhip.com/FMASoftwareLabs/product/java-ai-debug-toolkit",
     },
-    price: "$12",
+    price: "$5",
     image: "/assets/products/java-debug-toolkit.png",
   },
 ];
