@@ -48,81 +48,6 @@ Showcases two flagship products: **DebtWar** (Social Chaos Economy MMO) and **Ja
 | **Animation** | CSS keyframes + Framer Motion ready |
 | **Infrastructure** | Railway-ready |
 
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── api/
-│   │   ├── contact/route.ts      # Contact form endpoint
-│   │   └── newsletter/route.ts   # Newsletter subscription endpoint
-│   ├── globals.css                # Global styles & design tokens
-│   ├── layout.tsx                 # Root layout with SEO, navbar, footer
-│   └── page.tsx                   # Main page composing all sections
-├── components/
-│   ├── sections/
-│   │   ├── Hero.tsx               # Cinematic hero with typing effect
-│   │   ├── ProductsSection.tsx    # Product spotlight cards
-│   │   ├── TerminalSection.tsx    # Animated deploy log
-│   │   ├── Philosophy.tsx         # Engineering principles
-│   │   ├── Roadmap.tsx            # Product timeline
-│   │   ├── Newsletter.tsx         # Email subscription
-│   │   ├── Contact.tsx            # Contact form + social
-│   │   └── Footer.tsx             # Site footer
-│   ├── ui/                        # shadcn/ui components (button, badge, card, input, etc.)
-│   └── theme-provider.tsx         # Theme context wrapper
-├── lib/
-│   ├── constants.ts               # Products, roadmap, company data
-│   ├── utils.ts                   # Utility functions
-│   └── db/
-│       ├── schema.ts              # PostgreSQL schema (Drizzle)
-│       └── index.ts               # Database connection
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- PostgreSQL (optional for production)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/FMATheNomad/fma-software-labs-landing-page.git
-cd fma-software-labs-landing-page
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Production Build
-
-```bash
-npm run build
-npm start
-```
-
-### Database Setup (Optional)
-
-```bash
-# Copy environment file
-cp .env.example .env
-
-# Edit .env with your PostgreSQL connection string
-# DATABASE_URL="postgresql://user:password@host:5432/fma_landing"
-
-# Generate and push schema
-npm run db:generate
-npm run db:migrate
-```
-
 ## 🎨 Design System
 
 - **Primary**: Black, Zinc, Slate, Deep Gray
@@ -137,17 +62,9 @@ npm run db:migrate
 | **DebtWar** | Social Chaos Economy MMO — Telegram game about debt, traps, gangs, and underground economy | Live | [t.me/DebtWarBot](https://t.me/DebtWarBot) |
 | **JatuhTempo** | AI-Powered Debt Management — OCR bill parsing, automated reminders, monthly summaries | Live | [t.me/JatuhTempo_bot](https://t.me/JatuhTempo_bot) |
 
-## 🗺️ Roadmap
-
-- [x] Q4 2025 — Platform Launch (DebtWar & JatuhTempo)
-- [ ] Q1 2026 — Web Dashboard Beta
-- [ ] Q2 2026 — Mobile Apps (iOS & Android)
-- [ ] Q3 2026 — Public API Platform
-- [ ] Q4 2026 — Cross-Product AI Ecosystem
-
 ## 📄 License
 
-MIT © [FMATheNomad](https://github.com/FMATheNomad)
+GNU © [FMATheNomad](https://github.com/FMATheNomad)
 
 ---
 
