@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 import { companyInfo } from "@/lib/constants";
 
 const navLinks = [
-  { href: "/products", label: "Products" },
-  { href: "#terminal", label: "Terminal" },
-  { href: "#philosophy", label: "How We Build" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#products", label: "Products" },
+  { href: "/#terminal", label: "Terminal" },
+  { href: "/#philosophy", label: "How We Build" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
