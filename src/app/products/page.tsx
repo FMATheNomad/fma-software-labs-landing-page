@@ -259,7 +259,7 @@ export default function ProductsPage() {
             <Globe className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
             <h3 className="font-semibold text-lg mb-2">Coming Soon on RapidAPI</h3>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              We&apos;re building API services for debt management calculations, game economy simulation, and AI-powered text analysis. Stay tuned.
+              We&apos;re building API services for image processing, data validation, currency conversion, and AI-powered content moderation. Stay tuned.
             </p>
           </div>
         </div>
