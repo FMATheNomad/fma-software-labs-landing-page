@@ -2,7 +2,6 @@ import { Hero } from "@/components/sections/Hero";
 import { TerminalSection } from "@/components/sections/TerminalSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
 import { PhilosophySection } from "@/components/sections/Philosophy";
-import { RoadmapSection } from "@/components/sections/Roadmap";
 import { NewsletterSection } from "@/components/sections/Newsletter";
 import { ContactSection } from "@/components/sections/Contact";
 
@@ -13,7 +12,6 @@ export default function HomePage() {
       <ProductsSection />
       <TerminalSection />
       <PhilosophySection />
-      <RoadmapSection />
       <NewsletterSection />
       <ContactSection />
     </>

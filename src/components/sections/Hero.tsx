@@ -5,14 +5,23 @@ import Link from "next/link";
 import { ArrowRight, Play, Sparkles, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { companyInfo } from "@/lib/constants";
+import { companyInfo, products } from "@/lib/constants";
 
 const typingStrings = [
   "Building AI-native micro-SaaS ecosystems",
   "Engineering the future of social finance",
-  "Where code meets chaos economics",
+  "Where code meets chaos economies",
   "Solo-founder. Full-stack. AI-first.",
+  "Crafting developer toolkits & boilerplates",
 ];
+
+interface StatsData {
+  totalBotUsers: number;
+  totalClients: number;
+  loading: boolean;
+}
+
+const uniqueTechCount = 25;
 
 export function Hero() {
   const [textIndex, setTextIndex] = useState(0);
@@ -20,6 +29,11 @@ export function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
+  const [stats, setStats] = useState<StatsData>({
+    totalBotUsers: 0,
+    totalClients: 0,
+    loading: true,
+  });
 
   useEffect(() => {
     const currentText = typingStrings[textIndex];
@@ -48,6 +62,44 @@ export function Hero() {
     };
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    const DEBTWAR_API = process.env.NEXT_PUBLIC_DEBTWAR_API_URL || "https://debtwar.up.railway.app";
+    const JATUHTEMPO_API = process.env.NEXT_PUBLIC_JATUHTEMPO_API_URL || "https://jatuhtempo.up.railway.app";
+
+    const fetchStats = async () => {
+      try {
+        const [debtwarRes, jatuhtempoRes] = await Promise.allSettled([
+          fetch(`${DEBTWAR_API}/api/stats`),
+          fetch(`${JATUHTEMPO_API}/api/stats`),
+        ]);
+
+        let totalBotUsers = 0;
+
+        if (debtwarRes.status === "fulfilled" && debtwarRes.value.ok) {
+          const data = await debtwarRes.value.json();
+          totalBotUsers += data.total_users || 0;
+        }
+        if (jatuhtempoRes.status === "fulfilled" && jatuhtempoRes.value.ok) {
+          const data = await jatuhtempoRes.value.json();
+          totalBotUsers += data.total_users || 0;
+        }
+
+        setStats({
+          totalBotUsers,
+          totalClients: 47,
+          loading: false,
+        });
+      } catch {
+        setStats({
+          totalBotUsers: 0,
+          totalClients: 47,
+          loading: false,
+        });
+      }
+    };
+    fetchStats();
   }, []);
 
   return (
@@ -107,7 +159,7 @@ export function Hero() {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Button size="xl" className="gap-2 w-full sm:w-auto" asChild>
-              <Link href="#products">
+              <Link href="/products">
                 <Play className="h-5 w-5 fill-current" />
                 Explore Products
               </Link>
@@ -126,11 +178,24 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 max-w-lg mx-auto">
+          <div className="grid grid-cols-4 gap-6 max-w-2xl mx-auto">
             {[
-              { label: "Products", value: "2" },
-              { label: "Users", value: "500+" },
-              { label: "Tech Stack", value: "10+" },
+              {
+                label: "Live Products",
+                value: stats.loading ? "..." : `${products.length}+`,
+              },
+              {
+                label: "Bot Users",
+                value: stats.loading ? "..." : stats.totalBotUsers > 0 ? `${stats.totalBotUsers.toLocaleString()}+` : "...",
+              },
+              {
+                label: "Clients",
+                value: stats.loading ? "..." : `${stats.totalClients}+`,
+              },
+              {
+                label: "Tech Stack",
+                value: `${uniqueTechCount}+`,
+              },
             ].map((stat, i) => (
               <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(i + 1) * 200}ms` }}>
                 <div className="text-2xl sm:text-3xl font-bold">{stat.value}</div>

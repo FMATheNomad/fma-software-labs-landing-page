@@ -13,7 +13,6 @@ export const products = [
     cta: { text: "Play on Telegram", url: "https://t.me/DebtWarBot" },
     tags: ["Game", "Telegram", "Social", "MMO", "Economy"],
     logoPath: "/assets/debtwar-productlogo.avif",
-    logoHorizontal: "/assets/debtwar-productlogohorizontal.png",
     github: "https://github.com/FMATheNomad/debtwar",
     features: [
       "Debt economy with 5% daily interest",
@@ -60,53 +59,88 @@ export const products = [
   },
 ];
 
-export const roadmap = [
-  {
-    date: "2025 Q4",
-    title: "Platform Launch",
-    description: "Initial release of DebtWar and JatuhTempo on Telegram",
-    status: "completed",
-  },
-  {
-    date: "2026 Q1",
-    title: "Web Dashboard Beta",
-    description: "Unified web dashboard for all FMA products with real-time analytics",
-    status: "in-progress",
-  },
-  {
-    date: "2026 Q2",
-    title: "Mobile Apps",
-    description: "Native mobile applications for iOS and Android",
-    status: "planned",
-  },
-  {
-    date: "2026 Q3",
-    title: "API Platform",
-    description: "Public API access for third-party integrations and extensions",
-    status: "planned",
-  },
-  {
-    date: "2026 Q4",
-    title: "AI Ecosystem",
-    description: "Cross-product AI integration and intelligent automation layer",
-    status: "planned",
-  },
-];
-
 export const companyInfo = {
   name: "FMA Software Labs",
-  tagline: "Building AI-native micro-SaaS & micro-GaaS ecosystems",
+  tagline: "Building AI-native micro-SaaS, micro-GaaS & digital product ecosystems",
   description:
-    "We are an AI-native software lab building the next generation of micro-SaaS and micro-GaaS products. Founded by a solo engineer with a vision to create futuristic digital ecosystems that blend social interaction, gamification, and artificial intelligence.",
+    "We are an AI-native software lab building micro-SaaS, micro-GaaS, and digital products. Founded by a solo engineer with a vision to create futuristic digital ecosystems that blend social interaction, gamification, artificial intelligence, and developer tooling.",
   founded: "2024",
   location: "Remote-First",
   email: "hello@fmasoftwarelabs.com",
   social: {
     github: "https://github.com/FMATheNomad",
     twitter: "https://x.com/fmathenomad",
-    telegram: "https://t.me/fmasoftwarelabs",
+    telegram: "https://t.me/fmathenomad",
   },
 };
+
+export const promptProducts = [
+  {
+    id: "python-debug-toolkit",
+    name: "AI Debug Toolkit for Python",
+    description:
+      "50 premium AI prompts for debugging Python code. Covers FastAPI, Django, data science, performance optimization, and production troubleshooting.",
+    languages: ["Python"],
+    links: {
+      gumroad: "https://fmasoftwarelabs.gumroad.com/l/python-ai-debug-toolkit",
+      payhip: "https://payhip.com/FMASoftwareLabs/product/python-ai-debug-toolkit",
+    },
+    price: "$12",
+    image: "/assets/products/python-debug-toolkit.png",
+  },
+  {
+    id: "js-debug-toolkit",
+    name: "AI Debug Toolkit for JavaScript",
+    description:
+      "50 premium AI prompts for debugging JavaScript/Node.js code. Covers async bugs, memory leaks, React issues, and production stack traces.",
+    languages: ["JavaScript", "Node.js"],
+    links: {
+      gumroad: "https://fmasoftwarelabs.gumroad.com/l/js-ai-debug-toolkit",
+      payhip: "https://payhip.com/FMASoftwareLabs/product/js-ai-debug-toolkit",
+    },
+    price: "$12",
+    image: "/assets/products/js-debug-toolkit.png",
+  },
+  {
+    id: "ts-debug-toolkit",
+    name: "AI Debug Toolkit for TypeScript",
+    description:
+      "50 premium AI prompts for debugging TypeScript code. Covers type errors, generics, strict mode migration, and framework-specific debugging.",
+    languages: ["TypeScript"],
+    links: {
+      gumroad: "https://fmasoftwarelabs.gumroad.com/l/ts-ai-debug-toolkit",
+      payhip: "https://payhip.com/FMASoftwareLabs/product/ts-ai-debug-toolkit",
+    },
+    price: "$12",
+    image: "/assets/products/ts-debug-toolkit.png",
+  },
+  {
+    id: "go-debug-toolkit",
+    name: "AI Debug Toolkit for Go",
+    description:
+      "50 premium AI prompts for debugging Go applications. Covers goroutine leaks, profiling, HTTP handlers, and production incidents.",
+    languages: ["Go"],
+    links: {
+      gumroad: "https://fmasoftwarelabs.gumroad.com/l/go-ai-debug-toolkit",
+      payhip: "https://payhip.com/FMASoftwareLabs/product/go-ai-debug-toolkit",
+    },
+    price: "$12",
+    image: "/assets/products/go-debug-toolkit.png",
+  },
+  {
+    id: "java-debug-toolkit",
+    name: "AI Debug Toolkit for Java",
+    description:
+      "50 premium AI prompts for debugging Java applications. Covers Spring Boot, Quarkus, virtual threads, and JVM internals.",
+    languages: ["Java"],
+    links: {
+      gumroad: "https://fmasoftwarelabs.gumroad.com/l/java-ai-debug-toolkit",
+      payhip: "https://payhip.com/FMASoftwareLabs/product/java-ai-debug-toolkit",
+    },
+    price: "$12",
+    image: "/assets/products/java-debug-toolkit.png",
+  },
+];
 
 export const terminalLogs: Array<{
   type: "info" | "success" | "prompt" | "cursor";
@@ -114,13 +148,15 @@ export const terminalLogs: Array<{
   delay: number;
 }> = [
   { type: "info", message: "FMA Software Labs — boot sequence initiated", delay: 0 },
-  { type: "success", message: "Kernel loaded: AI-native micro-SaaS engine v2.4.1", delay: 800 },
+  { type: "success", message: "Kernel loaded: AI-native ecosystem engine v3.0.0", delay: 800 },
   { type: "info", message: "Mounting product ecosystem...", delay: 1600 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [ONLINE]", delay: 2400 },
   { type: "success", message: "JatuhTempo — AI-Powered Debt Management [ONLINE]", delay: 3200 },
-  { type: "info", message: "Initializing AI orchestration layer...", delay: 4000 },
-  { type: "info", message: "Syncing distributed state...", delay: 4800 },
-  { type: "success", message: "System ready. 2 products deployed. 0 errors.", delay: 5600 },
-  { type: "prompt", message: "fma@labs:~$ ./deploy --next-product", delay: 6400 },
-  { type: "cursor", message: "", delay: 7200 },
+  { type: "info", message: "Loading digital product catalog...", delay: 4000 },
+  { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 4800 },
+  { type: "info", message: "Initializing AI orchestration layer...", delay: 5600 },
+  { type: "info", message: "Syncing distributed state...", delay: 6400 },
+  { type: "success", message: "System ready. 2 SaaS/GaaS + 5 digital products deployed.", delay: 7200 },
+  { type: "prompt", message: "fma@labs:~$ ./deploy --next-product", delay: 8000 },
+  { type: "cursor", message: "", delay: 8800 },
 ];

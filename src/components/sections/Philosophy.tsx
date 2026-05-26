@@ -9,6 +9,8 @@ import {
   Infinity,
   Code2,
   Workflow,
+  Package,
+  Puzzle,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -17,37 +19,37 @@ const principles = [
     icon: Bot,
     title: "AI-Native by Design",
     description:
-      "Every product we build is infused with artificial intelligence from day one. Not as an afterthought, but as a core architectural principle.",
+      "Every product we build is infused with artificial intelligence from day one. Not as an afterthought, but as a core architectural principle — from SaaS bots to developer toolkits.",
   },
   {
     icon: Cpu,
     title: "Micro-First Architecture",
     description:
-      "We believe in small, focused, and powerful products. Micro-SaaS and Micro-GaaS that solve real problems without bloat or complexity.",
+      "We believe in small, focused, and powerful products. Micro-SaaS, Micro-GaaS, prompt packs, boilerplates, and API services — all solving real problems without bloat.",
   },
   {
-    icon: Shield,
-    title: "Solo-Founder Efficiency",
+    icon: Puzzle,
+    title: "Developer-Focused Tooling",
     description:
-      "Built by a solo engineer with the discipline of a team. Lean, fast, and uncompromising on quality. No meetings, no bureaucracy — just shipping.",
+      "Beyond building our own products, we create toolkits and boilerplates that help other developers ship faster. AI debug prompts, starter templates, and reusable components.",
+  },
+  {
+    icon: Workflow,
+    title: "Multi-Product Ecosystem",
+    description:
+      "From live Telegram bots to digital prompt products and upcoming API services — we build across multiple categories, all under one ecosystem.",
   },
   {
     icon: Users,
     title: "Social by Default",
     description:
-      "Every product has a social layer. We build ecosystems where users interact, compete, and collaborate — not isolated tools but living communities.",
+      "Every product has a social layer. We build ecosystems where users interact, compete, and collaborate — whether through Telegram bots or developer communities.",
   },
   {
-    icon: Workflow,
-    title: "Platform-Native",
+    icon: Package,
+    title: "Ship Fast, Iterate Faster",
     description:
-      "We meet users where they are. Telegram bots, web apps, mobile — our products are platform-native and designed for seamless user experiences.",
-  },
-  {
-    icon: Infinity,
-    title: "Continuous Evolution",
-    description:
-      "Products are never finished. We ship fast, iterate constantly, and evolve with our users. Roadmaps are living documents.",
+      "Products are never finished. We ship fast, iterate constantly, and evolve with our users. Digital products get updated, bots get new features, boilerplates get refined.",
   },
 ];
 
@@ -66,7 +68,7 @@ export function PhilosophySection() {
           </div>
           <h2 className="section-title mb-4">How We Build</h2>
           <p className="section-subtitle mx-auto">
-            Engineering principles that guide every line of code and every product decision.
+            Engineering principles that guide every line of code, every product, and every toolkit we ship.
           </p>
         </div>
 

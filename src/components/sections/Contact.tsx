@@ -91,7 +91,7 @@ export function ContactSection() {
                     { icon: Mail, label: "Email", value: companyInfo.email, href: `mailto:${companyInfo.email}` },
                     { icon: Github, label: "GitHub", value: "@FMATheNomad", href: companyInfo.social.github },
                     { icon: Twitter, label: "X (Twitter)", value: "@fmathenomad", href: companyInfo.social.twitter },
-                    { icon: TelegramIcon, label: "Telegram", value: "@fmasoftwarelabs", href: companyInfo.social.telegram },
+                    { icon: TelegramIcon, label: "Telegram", value: "@fmathenomad", href: companyInfo.social.telegram },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (

@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 import { companyInfo } from "@/lib/constants";
 
 const navLinks = [
-  { href: "#products", label: "Products" },
+  { href: "/products", label: "Products" },
   { href: "#terminal", label: "Terminal" },
-  { href: "#roadmap", label: "Roadmap" },
+  { href: "#philosophy", label: "How We Build" },
   { href: "#contact", label: "Contact" },
 ];
 

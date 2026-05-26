@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Github, Twitter, Send as TelegramIcon, Heart, Terminal } from "lucide-react";
-import { companyInfo, products } from "@/lib/constants";
+import { companyInfo } from "@/lib/constants";
 
 interface FooterLink {
   label: string;
@@ -19,17 +19,18 @@ interface FooterColumn {
 const footerLinks: FooterColumn[] = [
   {
     title: "Products",
-    links: products.map((p) => ({
-      label: p.name,
-      href: `#${p.slug}`,
-    })),
+    links: [
+      { label: "All Products", href: "/products" },
+      { label: "DebtWar", href: "/products#debtwar" },
+      { label: "JatuhTempo", href: "/products#jatuhtempo" },
+      { label: "Prompt Toolkits", href: "/products#prompts" },
+    ],
   },
   {
     title: "Sections",
     links: [
       { label: "Terminal", href: "#terminal" },
       { label: "Philosophy", href: "#philosophy" },
-      { label: "Roadmap", href: "#roadmap" },
       { label: "Contact", href: "#contact" },
     ],
   },
