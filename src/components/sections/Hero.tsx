@@ -178,7 +178,7 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-4 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 max-w-3xl mx-auto">
             {[
               {
                 label: "Live Products",
@@ -196,6 +196,10 @@ export function Hero() {
                 label: "Tech Stack",
                 value: `${uniqueTechCount}+`,
               },
+              {
+                label: "Team",
+                value: "1 (Solo)",
+              },
             ].map((stat, i) => (
               <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(i + 1) * 200}ms` }}>
                 <div className="text-2xl sm:text-3xl font-bold">{stat.value}</div>
@@ -203,6 +207,9 @@ export function Hero() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-muted-foreground mt-6 text-center font-mono">
+            Built by a solo engineer. No investors. No bloat. Just code.
+          </p>
         </div>
       </div>
 
