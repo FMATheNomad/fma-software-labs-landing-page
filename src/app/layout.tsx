@@ -64,6 +64,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo192.png" }],
   },
   manifest: "/manifest.json",
+  other: {
+    monetag: "040b392cec14a0e7d95e8b703d793628",
+  },
 };
 
 export default function RootLayout({
