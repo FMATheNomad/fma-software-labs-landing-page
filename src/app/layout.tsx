@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -88,6 +89,12 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="243669"
+          data-cfasync="false"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
