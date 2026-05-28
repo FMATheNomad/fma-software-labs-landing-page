@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -65,9 +64,6 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo192.png" }],
   },
   manifest: "/manifest.json",
-  other: {
-    monetag: "040b392cec14a0e7d95e8b703d793628",
-  },
 };
 
 export default function RootLayout({
@@ -89,12 +85,6 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
-        <Script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="243669"
-          data-cfasync="false"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
