@@ -29,17 +29,17 @@ const techStack = [
   {
     category: "Databases",
     icon: Database,
-    items: ["PostgreSQL", "SQLite", "SQLAlchemy", "Drizzle ORM"],
+    items: ["PostgreSQL", "SQLite", "SQLAlchemy", "Drizzle ORM", "Prisma", "Dexie.js"],
   },
   {
-    category: "AI & OCR",
+    category: "AI & ML",
     icon: Cpu,
-    items: ["DeepSeek AI", "PaddleOCR"],
+    items: ["DeepSeek AI", "PyTorch", "Demucs", "HuggingFace", "PaddleOCR"],
   },
   {
     category: "Infra & Tools",
     icon: Globe,
-    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Framer Motion", "Radix UI", "uvicorn"],
+    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Zustand", "Plasmo", "Wavesurfer.js", "Framer Motion", "Radix UI", "uvicorn"],
   },
 ];
 

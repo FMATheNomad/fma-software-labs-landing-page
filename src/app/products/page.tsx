@@ -6,13 +6,11 @@ import {
   ExternalLink,
   Github,
   CheckCircle2,
-  ChevronRight,
   Bot,
   Gamepad2,
   Landmark,
   Sparkles,
   ShoppingCart,
-  ArrowRight,
   Puzzle,
   Code2,
   Package,
@@ -26,6 +24,7 @@ import { products, promptProducts } from "@/lib/constants";
 const categoryIcons: Record<string, React.ReactNode> = {
   game: <Gamepad2 className="h-4 w-4" />,
   finance: <Landmark className="h-4 w-4" />,
+  ai: <Cpu className="h-4 w-4" />,
 };
 
 const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "success" }> = {

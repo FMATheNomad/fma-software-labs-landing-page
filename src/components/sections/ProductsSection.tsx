@@ -16,8 +16,8 @@ const categories = [
   {
     icon: Bot,
     label: "SaaS & GaaS",
-    count: "2 Live Products",
-    desc: "Telegram-based social finance & gaming",
+    count: "4 Live Products",
+    desc: "Telegram bots & web-based AI tools",
   },
   {
     icon: Puzzle,
