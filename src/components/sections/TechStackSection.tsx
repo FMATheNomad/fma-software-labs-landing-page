@@ -34,12 +34,12 @@ const techStack = [
   {
     category: "AI & ML",
     icon: Cpu,
-    items: ["DeepSeek AI", "PyTorch", "Demucs", "HuggingFace", "PaddleOCR"],
+    items: ["DeepSeek AI", "PaddleOCR"],
   },
   {
     category: "Infra & Tools",
     icon: Globe,
-    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Zustand", "Plasmo", "Wavesurfer.js", "Framer Motion", "Radix UI", "uvicorn"],
+    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Zustand", "Plasmo", "Framer Motion", "Radix UI", "uvicorn"],
   },
 ];
 

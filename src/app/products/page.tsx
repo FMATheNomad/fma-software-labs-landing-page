@@ -27,9 +27,11 @@ const categoryIcons: Record<string, React.ReactNode> = {
   ai: <Cpu className="h-4 w-4" />,
 };
 
-const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "success" }> = {
+const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "success" | "secondary" }> = {
   live: { label: "Live", variant: "neon" },
   beta: { label: "Beta", variant: "cyan" },
+  preview: { label: "Preview", variant: "secondary" },
+  maintenance: { label: "Maintenance", variant: "secondary" },
   coming_soon: { label: "Coming Soon", variant: "success" },
 };
 
