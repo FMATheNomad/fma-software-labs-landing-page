@@ -29,7 +29,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "success" | "secondary" }> = {
   live: { label: "Live", variant: "neon" },
-  dev: { label: "Dev", variant: "cyan" },
+  dev: { label: "In Development", variant: "cyan" },
   beta: { label: "Beta", variant: "cyan" },
   park: { label: "Parked", variant: "secondary" },
   coming_soon: { label: "Coming Soon", variant: "success" },
@@ -111,6 +111,11 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
                 <Github className="h-4 w-4" />
               </Link>
             </Button>
+            {product.slug === "debtwar" && (
+              <Button variant="outline" disabled className="gap-2 text-xs">
+                We're selling this game!
+              </Button>
+            )}
           </div>
         </div>
       </div>

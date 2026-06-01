@@ -150,7 +150,7 @@ export const terminalLogs: Array<{
   { type: "info", message: "FMA Software Labs — boot sequence initiated", delay: 0 },
   { type: "success", message: "Kernel loaded: AI-native ecosystem engine v3.0.0", delay: 800 },
   { type: "info", message: "Mounting product ecosystem...", delay: 1600 },
-  { type: "success", message: "JatuhTempo — AI-Powered Debt Management [DEV]", delay: 2400 },
+  { type: "success", message: "JatuhTempo — AI-Powered Debt Management [IN DEV]", delay: 2400 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [PARKED]", delay: 3200 },
   { type: "info", message: "Loading digital product catalog...", delay: 4000 },
   { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 4800 },
