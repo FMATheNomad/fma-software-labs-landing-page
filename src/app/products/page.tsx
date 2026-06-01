@@ -113,7 +113,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
             </Button>
             {product.slug === "debtwar" && (
               <Button variant="outline" disabled className="gap-2 text-xs">
-                We're selling this game!
+                We&apos;re selling this game!
               </Button>
             )}
           </div>
