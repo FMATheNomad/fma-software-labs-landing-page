@@ -16,7 +16,7 @@ const categories = [
   {
     icon: Bot,
     label: "SaaS & GaaS",
-    count: "3 Live Products",
+    count: "2 Products",
     desc: "Telegram bots & web-based AI tools",
   },
   {

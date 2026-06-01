@@ -39,7 +39,7 @@ const techStack = [
   {
     category: "Infra & Tools",
     icon: Globe,
-    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Zustand", "Plasmo", "Framer Motion", "Radix UI", "uvicorn"],
+    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Framer Motion", "Radix UI", "uvicorn"],
   },
 ];
 
