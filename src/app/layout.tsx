@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { TerminalProvider } from "@/components/TerminalProvider";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import "./globals.css";
@@ -81,9 +82,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="noise-bg" />
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
+          <TerminalProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </TerminalProvider>
         </ThemeProvider>
       </body>
     </html>
