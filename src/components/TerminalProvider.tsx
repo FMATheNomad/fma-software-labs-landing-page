@@ -14,13 +14,16 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
 
   const closeTerminal = useCallback(() => {
     setShowTerminal(false);
+    sessionStorage.setItem("fma-terminal-dismissed", "true");
   }, []);
 
   useEffect(() => {
-    if (!initialized) {
-      setInitialized(true);
+    const dismissed = sessionStorage.getItem("fma-terminal-dismissed");
+    if (dismissed) {
+      setShowTerminal(false);
     }
-  }, [initialized]);
+    setInitialized(true);
+  }, []);
 
   useEffect(() => {
     const handler = () => openTerminal();

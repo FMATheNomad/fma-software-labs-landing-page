@@ -22,15 +22,10 @@ const bootLines: BootLine[] = [
 ];
 
 const ascii = [
-  "  ███████  ███   ███  █████",
-  "  ██      ████ ████ ██   ██",
-  "  █████   ██ ███ ██ ███████",
-  "  ██      ██     ██ ██   ██",
-  "  ██      ██     ██ ██   ██",
-  "  ██      ██     ██ ██   ██",
-  "",
-  "   FMA SOFTWARE LABS",
-  "   AI-Native Ecosystem",
+  "╔══════════════════════════╗",
+  "║   FMA SOFTWARE LABS     ║",
+  "║   AI-Native Ecosystem   ║",
+  "╚══════════════════════════╝",
 ];
 
 function BootAnimation({ onDone }: { onDone: () => void }) {
@@ -169,10 +164,16 @@ export function TerminalSplash({ onEnter }: { onEnter: () => void }) {
     }
   }, [phase]);
 
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[100] bg-black flex flex-col overflow-hidden",
+        "fixed inset-0 z-[100] bg-black flex flex-col",
         isGlitching && "animate-glitch"
       )}
     >
