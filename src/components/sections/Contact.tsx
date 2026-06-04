@@ -42,7 +42,7 @@ export function ContactSection() {
                 <h3 className="font-semibold mb-3">Connect</h3>
                 <div className="space-y-3">
                   {[
-                    { icon: Mail, label: "Email", value: companyInfo.email, href: `mailto:${companyInfo.email}` },
+                    { icon: Mail, label: "Email", value: "fmasoftwarelabs@gmail.com", href: "mailto:fmasoftwarelabs@gmail.com" },
                     { icon: Github, label: "GitHub", value: "@FMATheNomad", href: companyInfo.social.github },
                     { icon: Twitter, label: "X (Twitter)", value: "@fmathenomad", href: companyInfo.social.twitter },
                     { icon: TelegramIcon, label: "Telegram", value: "@fmathenomad", href: companyInfo.social.telegram },
