@@ -132,7 +132,7 @@ export function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0">
@@ -150,109 +150,111 @@ export function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
-      <div className="section-container relative w-full pt-20 sm:pt-24 pb-16 sm:pb-24">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="flex justify-center mb-6 animate-fade-in">
-            <Badge variant="neon" className="px-4 py-1.5 text-sm gap-2">
-              <Sparkles className="h-3.5 w-3.5" />
-              AI-Native Software Lab
-            </Badge>
-          </div>
-
-          {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-6">
-            <span className="text-gradient-subtle">We Build</span>
-            <br />
-            <span className="text-gradient">The Future</span>
-          </h1>
-
-          {/* Typing effect */}
-          <div className="flex items-center justify-center gap-2 h-8 sm:h-10 mb-8">
-            <span className="text-lg sm:text-xl text-muted-foreground font-mono">
-              $
-            </span>
-            <span className="text-lg sm:text-xl text-muted-foreground font-mono">
-              {typingStrings[textIndex].slice(0, charIndex)}
-            </span>
-            <span className="w-[2px] h-5 sm:h-6 bg-neon-green animate-cursor-blink" />
-          </div>
-
-          {/* Description */}
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            {companyInfo.description}
-          </p>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button size="xl" className="gap-2 w-full sm:w-auto" asChild>
-              <Link href="/products">
-                <Play className="h-5 w-5 fill-current" />
-                Explore Products
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="xl"
-              className="gap-2 w-full sm:w-auto"
-              asChild
-            >
-              <Link href={companyInfo.social.github} target="_blank">
-                <Github className="h-5 w-5" />
-                View on GitHub
-              </Link>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 max-w-3xl mx-auto">
-            {[
-              {
-                label: "Live Products",
-                value: stats.loading ? "..." : `${products.length}+`,
-              },
-              {
-                label: "Bot Users",
-                value: stats.loading ? "..." : stats.totalBotUsers > 0 ? `${stats.totalBotUsers.toLocaleString()}+` : "...",
-              },
-              {
-                label: "Clients",
-                value: stats.loading ? "..." : `${stats.totalClients}+`,
-              },
-              {
-                label: "Tech Stack",
-                value: `${uniqueTechCount}+`,
-              },
-              {
-                label: "Team",
-                value: "1 (Solo)",
-              },
-            ].map((stat, i) => (
-              <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(i + 1) * 200}ms` }}>
-                <div className="text-2xl sm:text-3xl font-bold">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-muted-foreground mt-6 text-center font-mono">
-            Built by a solo engineer. No investors. No bloat. Just code.
-          </p>
-          {wibTime && (
-            <div className="flex items-center justify-center gap-1.5 mt-4">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
-              </span>
-              <span className="text-xs text-muted-foreground font-mono">
-                {wibDate} — {wibTime} WIB — Online 24/7
-              </span>
+      <div className="flex-1 flex items-center">
+        <div className="section-container relative w-full pt-20 sm:pt-24">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Badge */}
+            <div className="flex justify-center mb-6 animate-fade-in">
+              <Badge variant="neon" className="px-4 py-1.5 text-sm gap-2">
+                <Sparkles className="h-3.5 w-3.5" />
+                AI-Native Software Lab
+              </Badge>
             </div>
-          )}
+
+            {/* Main headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.05] mb-6">
+              <span className="text-gradient-subtle">We Build</span>
+              <br />
+              <span className="text-gradient">The Future</span>
+            </h1>
+
+            {/* Typing effect */}
+            <div className="flex items-center justify-center gap-2 h-8 sm:h-10 mb-8">
+              <span className="text-lg sm:text-xl text-muted-foreground font-mono">
+                $
+              </span>
+              <span className="text-lg sm:text-xl text-muted-foreground font-mono">
+                {typingStrings[textIndex].slice(0, charIndex)}
+              </span>
+              <span className="w-[2px] h-5 sm:h-6 bg-neon-green animate-cursor-blink" />
+            </div>
+
+            {/* Description */}
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+              {companyInfo.description}
+            </p>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+              <Button size="xl" className="gap-2 w-full sm:w-auto" asChild>
+                <Link href="/products">
+                  <Play className="h-5 w-5 fill-current" />
+                  Explore Products
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="xl"
+                className="gap-2 w-full sm:w-auto"
+                asChild
+              >
+                <Link href={companyInfo.social.github} target="_blank">
+                  <Github className="h-5 w-5" />
+                  View on GitHub
+                </Link>
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 max-w-3xl mx-auto">
+              {[
+                {
+                  label: "Live Products",
+                  value: stats.loading ? "..." : `${products.length}+`,
+                },
+                {
+                  label: "Bot Users",
+                  value: stats.loading ? "..." : stats.totalBotUsers > 0 ? `${stats.totalBotUsers.toLocaleString()}+` : "...",
+                },
+                {
+                  label: "Clients",
+                  value: stats.loading ? "..." : `${stats.totalClients}+`,
+                },
+                {
+                  label: "Tech Stack",
+                  value: `${uniqueTechCount}+`,
+                },
+                {
+                  label: "Team",
+                  value: "1 (Solo)",
+                },
+              ].map((stat, i) => (
+                <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(i + 1) * 200}ms` }}>
+                  <div className="text-2xl sm:text-3xl font-bold">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground mt-6 text-center font-mono">
+              Built by a solo engineer. No investors. No bloat. Just code.
+            </p>
+            {wibTime && (
+              <div className="flex items-center justify-center gap-1.5 mt-4 mb-8 sm:mb-12">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
+                </span>
+                <span className="text-xs text-muted-foreground font-mono">
+                  {wibDate} — {wibTime} WIB — Online 24/7
+                </span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
+      <div className="pb-6 sm:pb-8 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
         <span className="text-xs font-mono">Scroll</span>
         <div className="w-5 h-8 rounded-full border border-border flex items-start justify-center p-1">
           <div className="w-1 h-2 rounded-full bg-muted-foreground" />
