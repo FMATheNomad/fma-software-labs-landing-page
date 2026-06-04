@@ -5,8 +5,7 @@ import { Terminal } from "lucide-react";
 import { TerminalSplash } from "./TerminalSplash";
 
 export function TerminalProvider({ children }: { children: React.ReactNode }) {
-  const [showTerminal, setShowTerminal] = useState(true);
-  const [initialized, setInitialized] = useState(false);
+  const [showTerminal, setShowTerminal] = useState<boolean | null>(null);
 
   const openTerminal = useCallback(() => {
     setShowTerminal(true);
@@ -19,10 +18,7 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const dismissed = sessionStorage.getItem("fma-terminal-dismissed");
-    if (dismissed) {
-      setShowTerminal(false);
-    }
-    setInitialized(true);
+    setShowTerminal(!dismissed);
   }, []);
 
   useEffect(() => {
@@ -46,13 +42,15 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [showTerminal, openTerminal, closeTerminal]);
 
+  if (showTerminal === null) return <>{children}</>;
+
   return (
     <>
-      {initialized && showTerminal && (
+      {showTerminal && (
         <TerminalSplash onEnter={closeTerminal} />
       )}
 
-      {initialized && !showTerminal && (
+      {!showTerminal && (
         <button
           onClick={openTerminal}
           className="fixed bottom-4 right-4 z-40 w-9 h-9 rounded-lg border border-border/50 bg-background/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-neon-green hover:border-neon-green/50 transition-all duration-300"
