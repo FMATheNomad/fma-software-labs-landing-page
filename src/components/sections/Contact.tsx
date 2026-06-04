@@ -1,64 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 import {
-  Send,
-  Loader2,
-  CheckCircle2,
   MessageSquare,
   Github,
   Twitter,
   Send as TelegramIcon,
   Mail,
+  Construction,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { companyInfo } from "@/lib/constants";
 import Link from "next/link";
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email required"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactForm = z.infer<typeof contactSchema>;
-
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema),
-  });
-
-  const onSubmit = async (data: ContactForm) => {
-    setIsSubmitting(true);
-    try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      setIsSuccess(true);
-      reset();
-    } catch {
-      // silent fail
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
@@ -123,88 +77,25 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Contact form */}
+            {/* Contact form — placeholder */}
             <div className="lg:col-span-3">
-              {isSuccess ? (
-                <div className="flex flex-col items-center justify-center gap-4 p-12 rounded-xl border border-neon-green/20 bg-neon-green/5 text-center h-full">
-                  <CheckCircle2 className="h-12 w-12 text-neon-green" />
-                  <div>
-                    <p className="font-medium text-neon-green text-lg">
-                      Message sent!
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      We&apos;ll get back to you soon.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubmit(onSubmit)}
-                  className="space-y-4 p-6 rounded-xl border border-border/50 bg-card/30"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        id="name"
-                        placeholder="Your name"
-                        {...register("name")}
-                        className={errors.name ? "border-destructive" : ""}
-                      />
-                      {errors.name && (
-                        <p className="text-xs text-destructive">
-                          {errors.name.message}
-                        </p>
-                      )}
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="you@example.com"
-                        {...register("email")}
-                        className={errors.email ? "border-destructive" : ""}
-                      />
-                      {errors.email && (
-                        <p className="text-xs text-destructive">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="What's on your mind?"
-                      rows={5}
-                      {...register("message")}
-                      className={errors.message ? "border-destructive" : ""}
-                    />
-                    {errors.message && (
-                      <p className="text-xs text-destructive">
-                        {errors.message.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full gap-2"
-                    size="lg"
+              <div className="flex flex-col items-center justify-center gap-4 p-12 rounded-xl border border-border/50 bg-card/20 text-center h-full">
+                <Construction className="h-10 w-10 text-muted-foreground/40" />
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground">
+                    Contact form in development
+                  </p>
+                  <p className="text-xs text-muted-foreground/60 mt-2">
+                    Reach me directly at
+                  </p>
+                  <a
+                    href="mailto:fmasoftwarelabs@gmail.com"
+                    className="text-sm text-neon-green hover:underline mt-1 inline-block"
                   >
-                    {isSubmitting ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <Send className="h-4 w-4" />
-                    )}
-                    Send Message
-                  </Button>
-                </form>
-              )}
+                    fmasoftwarelabs@gmail.com
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
