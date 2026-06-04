@@ -165,7 +165,7 @@ export default function ProductsPage() {
   return (
     <div className="pt-24 sm:pt-28">
       {/* Header */}
-      <section className="section-padding relative">
+      <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
         </div>
