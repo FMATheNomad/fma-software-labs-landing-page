@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Play, Sparkles, Github } from "lucide-react";
+import { ArrowRight, Play, Sparkles, Github, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { companyInfo, products } from "@/lib/constants";
@@ -34,6 +34,24 @@ export function Hero() {
     totalClients: 0,
     loading: true,
   });
+  const [wibTime, setWibTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const formatter = new Intl.DateTimeFormat("id-ID", {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      });
+      setWibTime(formatter.format(now));
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const currentText = typingStrings[textIndex];
@@ -210,6 +228,17 @@ export function Hero() {
           <p className="text-xs text-muted-foreground mt-6 text-center font-mono">
             Built by a solo engineer. No investors. No bloat. Just code.
           </p>
+          {wibTime && (
+            <div className="flex items-center justify-center gap-1.5 mt-4">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
+              </span>
+              <span className="text-xs text-muted-foreground font-mono">
+                {wibTime} WIB — Online 24/7
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
