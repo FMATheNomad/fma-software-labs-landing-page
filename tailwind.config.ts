@@ -101,14 +101,6 @@ const config: Config = {
           from: { width: "0" },
           to: { width: "100%" },
         },
-        "glitch": {
-          "0%": { transform: "translate(0)", filter: "hue-rotate(0deg)" },
-          "20%": { transform: "translate(-2px, 2px)", filter: "hue-rotate(90deg)" },
-          "40%": { transform: "translate(2px, -2px)", filter: "hue-rotate(0deg)" },
-          "60%": { transform: "translate(-1px, 1px)", filter: "hue-rotate(-90deg)" },
-          "80%": { transform: "translate(1px, -1px)", filter: "hue-rotate(0deg)" },
-          "100%": { transform: "translate(0)", filter: "hue-rotate(0deg)" },
-        },
       },
       animation: {
         "cursor-blink": "cursor-blink 1s step-end infinite",
@@ -118,7 +110,6 @@ const config: Config = {
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "scanline": "scanline 8s linear infinite",
         "typewriter": "typewriter 2s steps(40) forwards",
-        "glitch": "glitch 0.8s ease-in-out",
       },
     },
   },
