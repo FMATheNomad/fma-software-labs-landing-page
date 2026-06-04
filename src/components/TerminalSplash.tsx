@@ -177,25 +177,6 @@ export function TerminalSplash({ onEnter }: { onEnter: () => void }) {
         isGlitching && "animate-glitch"
       )}
     >
-      <style jsx>{`
-        @keyframes glitch {
-          0% { transform: translate(0); filter: hue-rotate(0deg); }
-          10% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
-          20% { transform: translate(2px, -2px); filter: hue-rotate(0deg); }
-          30% { transform: translate(-1px, 1px); filter: hue-rotate(-90deg); }
-          40% { transform: translate(1px, -1px); filter: hue-rotate(0deg); }
-          50% { transform: translate(-3px, 3px); filter: hue-rotate(90deg); }
-          60% { transform: translate(3px, -3px); filter: hue-rotate(0deg); }
-          70% { transform: translate(-1px, 1px); filter: hue-rotate(-90deg); }
-          80% { transform: translate(1px, -1px); filter: hue-rotate(0deg); }
-          90% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
-          100% { transform: translate(0); filter: hue-rotate(0deg); }
-        }
-        .animate-glitch {
-          animation: glitch 0.8s ease-in-out;
-        }
-      `}</style>
-
       <div className="flex-1 flex items-center justify-center p-4 sm:p-8">
         <div className="w-full max-w-2xl">
           <div className="terminal-window border border-border/50">
