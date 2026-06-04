@@ -47,7 +47,7 @@ export function Hero() {
         second: "2-digit",
         hour12: false,
       });
-      const dateFmt = new Intl.DateTimeFormat("id-ID", {
+      const dateFmt = new Intl.DateTimeFormat("en-US", {
         timeZone: "Asia/Jakarta",
         weekday: "long",
         day: "numeric",
