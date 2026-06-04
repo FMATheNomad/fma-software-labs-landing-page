@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import { Terminal } from "lucide-react";
+import { Terminal, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Phase = "terminal" | "booting" | "booted";
-
 interface BootLine {
-  type: "ok" | "info" | "warn";
+  type: "ok" | "info";
   message: string;
 }
 
@@ -17,224 +15,154 @@ const bootLines: BootLine[] = [
   { type: "ok", message: "Mounting JatuhTempo — AI Debt Management" },
   { type: "ok", message: "Mounting DebtWar — Social Economy MMO" },
   { type: "info", message: "Loading digital catalog — 5 prompt toolkits" },
-  { type: "info", message: "Starting web interface..." },
-  { type: "ok", message: "System ready. Welcome to FMA Software Labs." },
-];
-
-const ascii = [
-  "╔══════════════════════════╗",
-  "║   FMA SOFTWARE LABS     ║",
-  "║   AI-Native Ecosystem   ║",
-  "╚══════════════════════════╝",
+  { type: "ok", message: "System ready. Welcome." },
 ];
 
 function BootAnimation({ onDone }: { onDone: () => void }) {
-  const [visibleLines, setVisibleLines] = useState(0);
-  const [asciiLine, setAsciiLine] = useState(0);
+  const [line, setLine] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [asciiDone, setAsciiDone] = useState(false);
 
   useEffect(() => {
-    const asciiTimer = setInterval(() => {
-      setAsciiLine((prev) => {
-        if (prev >= ascii.length - 1) {
-          clearInterval(asciiTimer);
-          setAsciiDone(true);
-          return prev;
+    const t1 = setInterval(() => {
+      setLine((p) => {
+        if (p >= bootLines.length - 1) {
+          clearInterval(t1);
+          return p;
         }
-        return prev + 1;
+        return p + 1;
       });
-    }, 100);
-    return () => clearInterval(asciiTimer);
+    }, 400);
+    return () => clearInterval(t1);
   }, []);
 
   useEffect(() => {
-    if (!asciiDone) return;
-    const lineTimer = setInterval(() => {
-      setVisibleLines((prev) => {
-        if (prev >= bootLines.length) {
-          clearInterval(lineTimer);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 350);
-    return () => clearInterval(lineTimer);
-  }, [asciiDone]);
-
-  useEffect(() => {
-    if (!asciiDone) return;
-    const progTimer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(progTimer);
+    const t2 = setInterval(() => {
+      setProgress((p) => {
+        if (p >= 100) {
+          clearInterval(t2);
           return 100;
         }
-        return prev + 2;
+        return p + 3;
       });
-    }, 50);
-    return () => clearInterval(progTimer);
-  }, [asciiDone]);
+    }, 60);
+    return () => clearInterval(t2);
+  }, []);
 
   useEffect(() => {
-    if (progress >= 100 && visibleLines >= bootLines.length) {
-      const timer = setTimeout(onDone, 600);
-      return () => clearTimeout(timer);
+    if (progress >= 100 && line >= bootLines.length - 1) {
+      const t = setTimeout(onDone, 500);
+      return () => clearTimeout(t);
     }
-  }, [progress, visibleLines, onDone]);
+  }, [progress, line, onDone]);
 
   return (
-    <div className="space-y-1">
-      <pre className="text-xs sm:text-sm leading-tight text-neon-green/80 font-mono mb-4 whitespace-pre">
-        {ascii.slice(0, asciiLine + 1).join("\n")}
+    <div className="space-y-2 font-mono text-xs sm:text-sm">
+      <pre className="text-neon-green/80 leading-tight mb-3 text-[10px] sm:text-xs">
+{`╔══════════════════════╗
+║  FMA SOFTWARE LABS  ║
+║  AI-Native Ecosystem║
+╚══════════════════════╝`}
       </pre>
 
-      {asciiDone && (
-        <>
-          <div className="w-full h-1 bg-muted rounded-full overflow-hidden mb-4">
-            <div
-              className="h-full bg-neon-green transition-all duration-75 ease-linear rounded-full"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
+      <div className="w-full h-1 bg-muted rounded-full overflow-hidden mb-3">
+        <div
+          className="h-full bg-neon-green transition-all duration-75 rounded-full"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
 
-          <div className="space-y-1">
-            {bootLines.slice(0, visibleLines).map((line, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-2 font-mono text-xs sm:text-sm animate-fade-in"
-              >
-                <span
-                  className={cn(
-                    "shrink-0",
-                    line.type === "ok" && "text-neon-green",
-                    line.type === "info" && "text-blue-400",
-                    line.type === "warn" && "text-yellow-400"
-                  )}
-                >
-                  {line.type === "ok" && "[  OK  ]"}
-                  {line.type === "info" && "[ INFO ]"}
-                  {line.type === "warn" && "[ WARN ]"}
-                </span>
-                <span className="text-muted-foreground">{line.message}</span>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+      {bootLines.slice(0, line + 1).map((b, i) => (
+        <div key={i} className="flex items-start gap-2">
+          <span className={b.type === "ok" ? "text-neon-green" : "text-blue-400"}>
+            {b.type === "ok" ? "[OK]" : "[..]"}
+          </span>
+          <span className="text-muted-foreground">{b.message}</span>
+        </div>
+      ))}
     </div>
   );
 }
 
-export function TerminalSplash({ onEnter }: { onEnter: () => void }) {
-  const [phase, setPhase] = useState<Phase>("terminal");
+export function TerminalSplash({ onEnter, onSkip }: { onEnter: () => void; onSkip: () => void }) {
+  const [phase, setPhase] = useState<"input" | "booting">("input");
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const [isGlitching, setIsGlitching] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    ref.current?.focus();
+  }, [phase]);
 
   const handleBootDone = useCallback(() => {
-    setIsGlitching(true);
-    setTimeout(() => {
-      setIsGlitching(false);
+    const el = document.querySelector("[data-terminal-overlay]");
+    if (el) {
+      el.classList.add("opacity-0", "scale-95");
+      setTimeout(onEnter, 300);
+    } else {
       onEnter();
-    }, 800);
+    }
   }, [onEnter]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const cmd = input.trim().toLowerCase();
     setError("");
-
-    if (cmd === "fma run" || cmd === "fma run ") {
+    const cmd = input.trim().toLowerCase();
+    if (cmd === "fma run") {
       setPhase("booting");
-    } else if (cmd === "fma terminal") {
-      // already in terminal
     } else {
-      setError(
-        `command not found: ${input.trim()}. Try: fma run — to launch the experience`
-      );
+      setError(`command not found: ${input.trim()}. Try: fma run`);
       setInput("");
     }
   };
 
-  useEffect(() => {
-    if (phase === "terminal" && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [phase]);
-
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
-
   return (
     <div
-      className={cn(
-        "fixed inset-0 z-[100] bg-black flex flex-col",
-        isGlitching && "animate-glitch"
-      )}
+      data-terminal-overlay
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm transition-all duration-300 p-4"
     >
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-8">
-        <div className="w-full max-w-2xl">
-          <div className="terminal-window border border-border/50">
-            <div className="terminal-header">
-              <div className="terminal-dot bg-red-500/80" />
-              <div className="terminal-dot bg-yellow-500/80" />
-              <div className="terminal-dot bg-neon-green/80" />
-              <div className="flex items-center gap-2 ml-4 text-xs text-muted-foreground font-mono">
-                <Terminal className="h-3.5 w-3.5" />
-                fma-terminal — bash
-              </div>
-            </div>
-
-            <div className="p-4 sm:p-6 min-h-[300px] sm:min-h-[400px]">
-              {phase === "terminal" && (
-                <div className="space-y-4">
-                  <div className="font-mono text-xs sm:text-sm text-muted-foreground space-y-1">
-                    <p>Welcome to FMA Software Labs.</p>
-                    <p>Type the command below to enter.</p>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="flex items-center gap-2 font-mono text-sm sm:text-base">
-                    <span className="text-neon-green shrink-0">fma@labs:~$</span>
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      className="flex-1 bg-transparent outline-none border-none text-foreground font-mono text-sm sm:text-base"
-                      placeholder="type here..."
-                      autoFocus
-                    />
-                  </form>
-
-                  {error && (
-                    <p className="text-red-400 font-mono text-xs sm:text-sm animate-fade-in">
-                      {error}
-                    </p>
-                  )}
-
-                  <div className="pt-4 border-t border-border/20">
-                    <p className="font-mono text-[10px] sm:text-xs text-muted-foreground">
-                      Available commands: <span className="text-neon-green">fma run</span>
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {phase === "booting" && (
-                <BootAnimation onDone={handleBootDone} />
-              )}
-            </div>
+      <div className="w-full max-w-lg rounded-xl border border-border/50 bg-card shadow-2xl overflow-hidden">
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-border/50 bg-muted/30">
+          <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
+            <Terminal className="h-3.5 w-3.5" />
+            fma-terminal — bash
           </div>
+          <button onClick={onSkip} className="text-muted-foreground hover:text-foreground transition-colors">
+            <X className="h-4 w-4" />
+          </button>
         </div>
-      </div>
 
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-[10px] text-muted-foreground/40 font-mono">
-        FMA Labs Terminal — press Enter to submit
+        {/* Body */}
+        <div className="p-4 sm:p-6 min-h-[250px]">
+          {phase === "input" && (
+            <div className="space-y-4">
+              <p className="text-xs sm:text-sm text-muted-foreground font-mono">
+                Welcome to FMA Software Labs. Type the command below to enter.
+              </p>
+
+              <form onSubmit={handleSubmit} className="flex items-center gap-2 font-mono text-sm">
+                <span className="text-neon-green shrink-0">fma@labs:~$</span>
+                <input
+                  ref={ref}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  className="flex-1 bg-transparent outline-none border-none text-foreground font-mono text-sm"
+                  placeholder="type fma run"
+                  autoFocus
+                />
+              </form>
+
+              {error && <p className="text-red-400 font-mono text-xs animate-fade-in">{error}</p>}
+
+              <p className="text-[10px] text-muted-foreground/50 font-mono border-t border-border/20 pt-3">
+                Available: <span className="text-neon-green">fma run</span> &middot; or close to skip
+              </p>
+            </div>
+          )}
+
+          {phase === "booting" && <BootAnimation onDone={handleBootDone} />}
+        </div>
       </div>
     </div>
   );

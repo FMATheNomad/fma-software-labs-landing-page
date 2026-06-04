@@ -5,61 +5,52 @@ import { Terminal } from "lucide-react";
 import { TerminalSplash } from "./TerminalSplash";
 
 export function TerminalProvider({ children }: { children: React.ReactNode }) {
-  const [showTerminal, setShowTerminal] = useState<boolean | null>(null);
+  const [show, setShow] = useState<boolean | null>(null);
 
-  const openTerminal = useCallback(() => {
-    setShowTerminal(true);
-  }, []);
-
-  const closeTerminal = useCallback(() => {
-    setShowTerminal(false);
+  const close = useCallback(() => {
+    setShow(false);
     sessionStorage.setItem("fma-terminal-dismissed", "true");
   }, []);
 
-  useEffect(() => {
-    const dismissed = sessionStorage.getItem("fma-terminal-dismissed");
-    setShowTerminal(!dismissed);
+  const open = useCallback(() => {
+    setShow(true);
   }, []);
 
   useEffect(() => {
-    const handler = () => openTerminal();
-    window.addEventListener("open-terminal", handler);
-    return () => window.removeEventListener("open-terminal", handler);
-  }, [openTerminal]);
+    const d = sessionStorage.getItem("fma-terminal-dismissed");
+    setShow(!d);
+  }, []);
 
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
+    const h = () => open();
+    window.addEventListener("open-terminal", h);
+    return () => window.removeEventListener("open-terminal", h);
+  }, [open]);
+
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "`") {
         e.preventDefault();
-        if (showTerminal) {
-          closeTerminal();
-        } else {
-          openTerminal();
-        }
+        setShow((s) => !s);
       }
     };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [showTerminal, openTerminal, closeTerminal]);
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, []);
 
-  if (showTerminal === null) return <>{children}</>;
+  if (show === null) return <>{children}</>;
 
   return (
     <>
-      {showTerminal && (
-        <TerminalSplash onEnter={closeTerminal} />
-      )}
+      {show && <TerminalSplash onEnter={close} onSkip={close} />}
 
-      {!showTerminal && (
-        <button
-          onClick={openTerminal}
-          className="fixed bottom-4 right-4 z-40 w-9 h-9 rounded-lg border border-border/50 bg-background/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-neon-green hover:border-neon-green/50 transition-all duration-300"
-          aria-label="Open terminal"
-          title="Open terminal (fma terminal)"
-        >
-          <Terminal className="h-4 w-4" />
-        </button>
-      )}
+      <button
+        onClick={open}
+        className="fixed bottom-4 right-4 z-40 w-9 h-9 rounded-lg border border-border/50 bg-background/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-neon-green hover:border-neon-green/50 transition-all duration-300"
+        aria-label="Open terminal"
+      >
+        <Terminal className="h-4 w-4" />
+      </button>
 
       {children}
     </>
