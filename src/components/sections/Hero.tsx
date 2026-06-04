@@ -35,18 +35,27 @@ export function Hero() {
     loading: true,
   });
   const [wibTime, setWibTime] = useState("");
+  const [wibDate, setWibDate] = useState("");
 
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const formatter = new Intl.DateTimeFormat("id-ID", {
+      const timeFmt = new Intl.DateTimeFormat("id-ID", {
         timeZone: "Asia/Jakarta",
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
         hour12: false,
       });
-      setWibTime(formatter.format(now));
+      const dateFmt = new Intl.DateTimeFormat("id-ID", {
+        timeZone: "Asia/Jakarta",
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      setWibTime(timeFmt.format(now));
+      setWibDate(dateFmt.format(now));
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -235,7 +244,7 @@ export function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
               </span>
               <span className="text-xs text-muted-foreground font-mono">
-                {wibTime} WIB — Online 24/7
+                {wibDate} — {wibTime} WIB — Online 24/7
               </span>
             </div>
           )}
