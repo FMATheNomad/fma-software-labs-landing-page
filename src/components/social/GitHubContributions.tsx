@@ -10,11 +10,11 @@ interface DayData {
 }
 
 const levelColors: Record<number, string> = {
-  0: "rgba(255,255,255,0.04)",
-  1: "rgba(0,255,65,0.15)",
-  2: "rgba(0,255,65,0.4)",
-  3: "rgba(0,255,65,0.65)",
-  4: "#00ff41",
+  0: "transparent",
+  1: "rgba(0,200,83,0.12)",
+  2: "rgba(0,200,83,0.35)",
+  3: "rgba(0,200,83,0.6)",
+  4: "rgba(0,200,83,0.9)",
 };
 
 function chunkWeeks(days: DayData[]): DayData[][] {
@@ -63,7 +63,7 @@ export function GitHubContributions() {
           <div className="flex justify-center mb-4">
             <Badge variant="neon" className="gap-2 px-4 py-1.5">
               <Code2 className="h-3.5 w-3.5" />
-              Open Source
+              GitHub
             </Badge>
           </div>
           <h2 className="section-title mb-2">GitHub Activity</h2>
@@ -79,7 +79,7 @@ export function GitHubContributions() {
                 {week.map((day, di) => (
                   <div
                     key={di}
-                    className="group relative w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm cursor-default"
+                    className="group relative w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm cursor-default ring-1 ring-border/30"
                     style={{ backgroundColor: levelColors[day.level] || levelColors[0] }}
                   >
                     <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
@@ -98,8 +98,8 @@ export function GitHubContributions() {
           {[0, 1, 2, 3, 4].map((l) => (
             <div
               key={l}
-              className="w-3 h-3 rounded-sm"
-              style={{ backgroundColor: levelColors[l], border: "1px solid rgba(255,255,255,0.1)" }}
+              className="w-3 h-3 rounded-sm ring-1 ring-border/30"
+              style={{ backgroundColor: levelColors[l] }}
             />
           ))}
           <span>More</span>
