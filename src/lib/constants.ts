@@ -57,6 +57,33 @@ export const products = [
     ],
     tech: ["Python", "python-telegram-bot", "PostgreSQL", "APScheduler"],
   },
+  {
+    id: 3,
+    name: "RupiahPulse",
+    slug: "rupiahpulse",
+    tagline: "Real-Time Rupiah Health Index",
+    description:
+      "Real-time web app that tracks, analyzes, and predicts the Indonesian Rupiah's health against USD. Live exchange rates, market data, macro-economic indicators, news sentiment analysis, and AI-powered predictions.",
+    longDescription:
+      "RupiahPulse monitors USD/IDR exchange rates in real-time, aggregates market data (DXY, crude oil), macro-economic indicators (inflation, FX reserves, trade balance), and news sentiment from GDELT. Computes a composite Health Index (0-100) from 7 weighted factors with rule-based natural language explanations in Indonesian. Features linear regression predictions with 95% confidence intervals for 1m/3m/6m/1y horizons.",
+    status: "dev",
+    category: "ai",
+    cta: { text: "View Dashboard", url: "#" },
+    tags: ["Finance", "Dashboard", "Real-time", "Data", "Rupiah"],
+    logoPath: "/assets/rupiahpulse-favicon.svg",
+    github: "https://github.com/FMATheNomad/rupiahpulse",
+    features: [
+      "Live USD/IDR exchange rate (5-min updates)",
+      "Composite Health Index (0-100) from 7 factors",
+      "Rule-based NLG explanations in Bahasa Indonesia",
+      "Interactive charts with Apache ECharts",
+      "Linear regression predictions (1m/3m/6m/1y)",
+      "GDELT news aggregation with sentiment scoring",
+      "Dark/light theme + EN/ID language toggle",
+      "Docker + Railway deployment ready",
+    ],
+    tech: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "Apache ECharts", "GDELT"],
+  },
 ];
 
 export const companyInfo = {
@@ -152,9 +179,10 @@ export const terminalLogs: Array<{
   { type: "info", message: "Mounting product ecosystem...", delay: 1600 },
   { type: "success", message: "JatuhTempo — AI-Powered Debt Management [IN DEV]", delay: 2400 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [PARKED]", delay: 3200 },
-  { type: "info", message: "Loading digital product catalog...", delay: 4000 },
-  { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 4800 },
-  { type: "success", message: "System ready. 2 products + 5 digital toolkits deployed.", delay: 5600 },
+  { type: "success", message: "RupiahPulse — Real-Time Rupiah Health Index [DEV]", delay: 4000 },
+  { type: "info", message: "Loading digital product catalog...", delay: 4800 },
+  { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 5600 },
+  { type: "success", message: "System ready. 3 products + 5 digital toolkits deployed.", delay: 6400 },
   { type: "prompt", message: "fma@labs:~$ ./deploy --next-product", delay: 8000 },
   { type: "cursor", message: "", delay: 8800 },
 ];
