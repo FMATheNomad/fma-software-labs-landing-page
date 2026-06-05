@@ -46,7 +46,7 @@ const techStack = [
   {
     category: "Data & Analytics",
     icon: BarChart3,
-    items: ["Apache ECharts", "Recharts", "TanStack Query", "MapLibre GL", "Lucide"],
+    items: ["Apache ECharts", "Recharts", "TanStack Query", "React Router", "MapLibre GL", "Lucide"],
   },
   {
     category: "HTTP & Auth",
