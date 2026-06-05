@@ -17,19 +17,7 @@ const levelColors: Record<number, string> = {
   4: "rgba(0,200,83,0.92)",
 };
 
-function chunkWeeks(days: DayData[]): DayData[][] {
-  const weeks: DayData[][] = [];
-  let current: DayData[] = [];
-  for (const day of days) {
-    current.push(day);
-    if (current.length === 7) {
-      weeks.push(current);
-      current = [];
-    }
-  }
-  if (current.length > 0) weeks.push(current);
-  return weeks;
-}
+const dayLabels = ["Sun", "Mon", "", "Wed", "", "Fri", "Sat"];
 
 export function GitHubContributions() {
   const [data, setData] = useState<{
@@ -54,7 +42,21 @@ export function GitHubContributions() {
 
   if (!data || data.days.length === 0) return null;
 
-  const weeks = chunkWeeks(data.days);
+  // GitHub sends data row-by-row (all Sundays, all Mondays, etc.)
+  // so we have 7 rows. Transpose to columns (weeks).
+  const totalDays = data.days.length;
+  const rows = 7;
+  const cols = Math.ceil(totalDays / rows);
+
+  const grid: string[][] = [];
+  for (let col = 0; col < cols; col++) {
+    const column: string[] = [];
+    for (let row = 0; row < rows; row++) {
+      const idx = row * cols + col;
+      column.push(idx < totalDays ? levelColors[data.days[idx].level] || levelColors[0] : levelColors[0]);
+    }
+    grid.push(column);
+  }
 
   return (
     <section className="section-padding pb-0 relative">
@@ -73,20 +75,15 @@ export function GitHubContributions() {
         </div>
 
         <div className="overflow-x-auto pb-2">
-          <div className="flex gap-[3px] min-w-fit justify-center">
-            {weeks.map((week, wi) => (
-              <div key={wi} className="flex flex-col gap-[3px]">
-                {week.map((day, di) => (
+          <div className="flex gap-[3px] min-w-fit justify-center" style={{}}>
+            {grid.map((col, ci) => (
+              <div key={ci} className="flex flex-col gap-[3px]">
+                {col.map((color, ri) => (
                   <div
-                    key={di}
-                    className="group relative w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm cursor-default"
-                    style={{ backgroundColor: levelColors[day.level] || levelColors[0] }}
-                  >
-                    <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
-                      {day.date}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-foreground" />
-                    </div>
-                  </div>
+                    key={ri}
+                    className="w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm"
+                    style={{ backgroundColor: color }}
+                  />
                 ))}
               </div>
             ))}
