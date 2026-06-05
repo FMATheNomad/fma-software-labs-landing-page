@@ -7,6 +7,8 @@ import {
   Cpu,
   Globe,
   Blocks,
+  BarChart3,
+  Shield,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -39,7 +41,17 @@ const techStack = [
   {
     category: "Infra & Tools",
     icon: Globe,
-    items: ["Docker", "APScheduler", "Pydantic", "Zod", "Apache ECharts", "MapLibre GL", "Zustand", "Framer Motion", "Radix UI", "uvicorn"],
+    items: ["Docker", "Vite", "uvicorn", "APScheduler", "Pydantic", "Alembic", "Zod", "Zustand", "Framer Motion", "Radix UI"],
+  },
+  {
+    category: "Data & Analytics",
+    icon: BarChart3,
+    items: ["Apache ECharts", "Recharts", "TanStack Query", "MapLibre GL", "Lucide"],
+  },
+  {
+    category: "HTTP & Auth",
+    icon: Shield,
+    items: ["Axios", "httpx", "Cloudinary", "Clerk", "NextAuth"],
   },
 ];
 
