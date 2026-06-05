@@ -10,11 +10,11 @@ interface DayData {
 }
 
 const levelColors: Record<number, string> = {
-  0: "transparent",
-  1: "rgba(0,200,83,0.12)",
-  2: "rgba(0,200,83,0.35)",
-  3: "rgba(0,200,83,0.6)",
-  4: "rgba(0,200,83,0.9)",
+  0: "rgba(128,128,128,0.08)",
+  1: "rgba(0,200,83,0.18)",
+  2: "rgba(0,200,83,0.4)",
+  3: "rgba(0,200,83,0.65)",
+  4: "rgba(0,200,83,0.92)",
 };
 
 function chunkWeeks(days: DayData[]): DayData[][] {
@@ -79,7 +79,7 @@ export function GitHubContributions() {
                 {week.map((day, di) => (
                   <div
                     key={di}
-                    className="group relative w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm cursor-default ring-1 ring-border/30"
+                    className="group relative w-[10px] h-[10px] sm:w-[13px] sm:h-[13px] rounded-sm cursor-default"
                     style={{ backgroundColor: levelColors[day.level] || levelColors[0] }}
                   >
                     <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md bg-foreground text-background text-[10px] font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg">
@@ -98,7 +98,7 @@ export function GitHubContributions() {
           {[0, 1, 2, 3, 4].map((l) => (
             <div
               key={l}
-              className="w-3 h-3 rounded-sm ring-1 ring-border/30"
+              className="w-3 h-3 rounded-sm"
               style={{ backgroundColor: levelColors[l] }}
             />
           ))}
