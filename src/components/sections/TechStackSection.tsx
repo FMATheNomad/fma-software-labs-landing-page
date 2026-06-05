@@ -21,7 +21,7 @@ const techStack = [
   {
     category: "Frameworks",
     icon: Blocks,
-    items: ["Next.js", "React", "FastAPI", "Tailwind CSS"],
+    items: ["Next.js", "React", "FastAPI", "Tailwind CSS", "Vite"],
   },
   {
     category: "Bot Frameworks",
@@ -41,7 +41,7 @@ const techStack = [
   {
     category: "Infra & Tools",
     icon: Globe,
-    items: ["Docker", "Vite", "uvicorn", "APScheduler", "Pydantic", "Alembic", "Zod", "Zustand", "Framer Motion", "Radix UI"],
+    items: ["Docker", "uvicorn", "APScheduler", "Pydantic", "Alembic", "Zod", "Zustand", "Framer Motion", "Radix UI"],
   },
   {
     category: "Data & Analytics",
