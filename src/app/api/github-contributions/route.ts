@@ -2,12 +2,7 @@ import { NextResponse } from "next/server";
 
 interface DayData {
   date: string;
-  count: number;
-  level: 0 | 1 | 2 | 3 | 4;
-}
-
-interface WeekData {
-  days: DayData[];
+  level: number;
 }
 
 export async function GET() {
@@ -25,32 +20,27 @@ export async function GET() {
 
     const html = await res.text();
 
-    const tooltipMatches = html.matchAll(
-      /<tool-tip[^>]*data-type="date"[^>]*>([^<]*)<[\s\S]*?<span[^>]*>(\d+)\s*contribution/gi
-    );
-
-    let totalContributions = 0;
     const totalMatch = html.match(
       /(\d[\d,]*)\s*contribution/i
     );
-    if (totalMatch) {
-      totalContributions = parseInt(totalMatch[1].replace(/,/g, ""));
-    }
+    const totalContributions = totalMatch
+      ? parseInt(totalMatch[1].replace(/,/g, ""))
+      : 0;
 
-    const rects: DayData[] = [];
-    const rectRegex = /<rect[^>]*data-date="([^"]*)"[^>]*data-level="(\d+)"[^>]*\/>/g;
+    const days: DayData[] = [];
+    const tdRegex =
+      /<td[^>]*data-date="([^"]*)"[^>]*data-level="([^"]*)"[^>]*>/g;
     let match;
-    while ((match = rectRegex.exec(html)) !== null) {
-      rects.push({
+    while ((match = tdRegex.exec(html)) !== null) {
+      days.push({
         date: match[1],
-        count: 0,
-        level: parseInt(match[2]) as 0 | 1 | 2 | 3 | 4,
+        level: parseInt(match[2]),
       });
     }
 
     return NextResponse.json({
       totalContributions,
-      days: rects,
+      days,
     });
   } catch {
     return NextResponse.json({ error: "Internal error" }, { status: 500 });
