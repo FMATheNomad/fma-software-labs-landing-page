@@ -6,6 +6,7 @@ import { ArrowRight, Play, Sparkles, Github, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { companyInfo, products } from "@/lib/constants";
+import { InstagramMusic } from "@/components/social/InstagramMusic";
 
 const typingStrings = [
   "Building AI-native micro-SaaS ecosystems",
@@ -239,14 +240,17 @@ export function Hero() {
               Built by a solo engineer. No investors. No bloat. Just code.
             </p>
             {wibTime && (
-              <div className="flex items-center justify-center gap-1.5 mt-4 mb-8 sm:mb-12">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
-                </span>
-                <span className="text-xs text-muted-foreground font-mono">
-                  {wibDate} — {wibTime} WIB — Online 24/7
-                </span>
+              <div className="flex flex-col items-center gap-1.5 mt-4 mb-8 sm:mb-12">
+                <div className="flex items-center gap-1.5">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-green opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
+                  </span>
+                  <span className="text-xs text-muted-foreground font-mono">
+                    {wibDate} — {wibTime} WIB — Online 24/7
+                  </span>
+                </div>
+                <InstagramMusic />
               </div>
             )}
           </div>
