@@ -22,7 +22,7 @@ interface StatsData {
   loading: boolean;
 }
 
-const uniqueTechCount = 25;
+const uniqueTechCount = 38;
 
 export function Hero() {
   const [textIndex, setTextIndex] = useState(0);
