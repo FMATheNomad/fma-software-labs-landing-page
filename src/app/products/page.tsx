@@ -29,6 +29,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "success" | "secondary" }> = {
   live: { label: "Live", variant: "neon" },
+  live_mvp: { label: "Live MVP", variant: "neon" },
   dev: { label: "In Development", variant: "cyan" },
   beta: { label: "Beta", variant: "cyan" },
   park: { label: "Parked", variant: "secondary" },

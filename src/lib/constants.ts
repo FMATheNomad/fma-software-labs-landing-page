@@ -84,6 +84,33 @@ export const products = [
     ],
     tech: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL", "Apache ECharts", "GDELT"],
   },
+  {
+    id: 4,
+    name: "Uyuhan Jaya",
+    slug: "uyuhan-jaya",
+    tagline: "Manajemen Proyek Konstruksi untuk Kontraktor Indonesia",
+    description:
+      "WhatsApp-first, AI-powered construction project management platform. QR attendance, material logging, progress tracking, AI RAB generator, and WhatsApp bot for field workers.",
+    longDescription:
+      "Uyuhan Jaya is a construction project management platform built for Indonesian contractors. Features QR code attendance with selfie, material cost tracking, progress photo timeline, AI-powered RAB (Rencana Anggaran Biaya) generation via DeepSeek with Excel export, and a WhatsApp bot for mandor to submit attendance and updates directly from the field.",
+    status: "live_mvp",
+    category: "ai",
+    cta: { text: "View Dashboard", url: "https://uyuhanjaya.up.railway.app" },
+    tags: ["Construction", "WhatsApp", "AI", "Project Management", "Indonesia"],
+    logoPath: "/assets/uyuhan-favicon.svg",
+    github: "https://github.com/FMATheNomad/uyuhan-jaya",
+    features: [
+      "QR code attendance with selfie photo",
+      "Material logging with cost tracking",
+      "Progress photo timeline & percentage",
+      "AI RAB generator (DeepSeek → Excel)",
+      "WhatsApp bot for field workers (mandor)",
+      "Role-based dashboards (Owner/Kontraktor/Mandor)",
+      "AI cash flow & progress analysis",
+      "Docker + Railway deployment ready",
+    ],
+    tech: ["Python", "FastAPI", "React", "TypeScript", "WhatsApp Baileys", "DeepSeek AI", "PostgreSQL", "Vite"],
+  },
 ];
 
 export const companyInfo = {
@@ -180,9 +207,10 @@ export const terminalLogs: Array<{
   { type: "success", message: "JatuhTempo — AI-Powered Debt Management [IN DEV]", delay: 2400 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [PARKED]", delay: 3200 },
   { type: "success", message: "RupiahPulse — Real-Time Rupiah Health Index [ONLINE]", delay: 4000 },
-  { type: "info", message: "Loading digital product catalog...", delay: 4800 },
-  { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 5600 },
-  { type: "success", message: "System ready. 3 products + 5 digital toolkits deployed.", delay: 6400 },
+  { type: "success", message: "Uyuhan Jaya — Konstruksi Project Management [MVP]", delay: 4800 },
+  { type: "info", message: "Loading digital product catalog...", delay: 5600 },
+  { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 6400 },
+  { type: "success", message: "System ready. 4 products + 5 digital toolkits deployed.", delay: 7200 },
   { type: "prompt", message: "fma@labs:~$ ./deploy --next-product", delay: 8000 },
   { type: "cursor", message: "", delay: 8800 },
 ];

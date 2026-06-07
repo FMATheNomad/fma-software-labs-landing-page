@@ -16,8 +16,8 @@ const categories = [
   {
     icon: Bot,
     label: "SaaS & GaaS",
-    count: "3 Products",
-    desc: "Finance, game & data analytics tools",
+    count: "4 Products",
+    desc: "Finance, game, data & construction tools",
   },
   {
     icon: Puzzle,
