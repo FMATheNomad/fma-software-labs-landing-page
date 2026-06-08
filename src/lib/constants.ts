@@ -86,14 +86,14 @@ export const products = [
   },
   {
     id: 4,
-    name: "Uyuhan Jaya",
-    slug: "uyuhan-jaya",
+    name: "Minicrane",
+    slug: "minicrane",
     tagline: "Manajemen Proyek Konstruksi untuk Kontraktor Indonesia",
     description:
       "WhatsApp-first, AI-powered construction project management platform. QR attendance, material logging, progress tracking, AI RAB generator, and WhatsApp bot for field workers.",
     longDescription:
-      "Uyuhan Jaya is a construction project management platform built for Indonesian contractors. Features QR code attendance with selfie, material cost tracking, progress photo timeline, AI-powered RAB (Rencana Anggaran Biaya) generation via DeepSeek with Excel export, and a WhatsApp bot for mandor to submit attendance and updates directly from the field.",
-    status: "live_mvp",
+      "Minicrane is a construction project management platform built for Indonesian contractors. Features QR code attendance with selfie, material cost tracking, progress photo timeline, AI-powered RAB (Rencana Anggaran Biaya) generation via DeepSeek with Excel export, and a WhatsApp bot for mandor to submit attendance and updates directly from the field.",
+    status: "dev",
     category: "ai",
     cta: { text: "View Dashboard", url: "https://uyuhanjaya.up.railway.app" },
     tags: ["Construction", "WhatsApp", "AI", "Project Management", "Indonesia"],
@@ -207,7 +207,7 @@ export const terminalLogs: Array<{
   { type: "success", message: "JatuhTempo — AI-Powered Debt Management [IN DEV]", delay: 2400 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [PARKED]", delay: 3200 },
   { type: "success", message: "RupiahPulse — Real-Time Rupiah Health Index [ONLINE]", delay: 4000 },
-  { type: "success", message: "Uyuhan Jaya — Konstruksi Project Management [MVP]", delay: 4800 },
+  { type: "success", message: "Minicrane — Konstruksi Project Management [IN DEV]", delay: 4800 },
   { type: "info", message: "Loading digital product catalog...", delay: 5600 },
   { type: "success", message: "5 AI Debug Toolkits loaded — Python, JS, TS, Go, Java", delay: 6400 },
   { type: "success", message: "System ready. 4 products + 5 digital toolkits deployed.", delay: 7200 },
