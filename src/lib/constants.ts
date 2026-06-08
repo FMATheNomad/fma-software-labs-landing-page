@@ -12,7 +12,7 @@ export const products = [
     category: "finance",
     cta: { text: "Try on Telegram", url: "https://t.me/JatuhTempo_bot" },
     tags: ["AI", "Telegram", "Finance", "OCR", "Debt Management"],
-    logoPath: "/assets/jatuhtempo-productlogo.png",
+    logoPath: "/assets/jatuhtempo-productlogo.webp",
     github: "https://github.com/FMATheNomad/jatuhtempo",
     features: [
       "AI-powered OCR bill parsing",

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const revalidate = 3600;
+
 interface DayData {
   date: string;
   level: number;

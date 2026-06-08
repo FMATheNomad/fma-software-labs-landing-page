@@ -6,7 +6,6 @@ import { ArrowRight, Play, Sparkles, Github, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { companyInfo, products } from "@/lib/constants";
-import { InstagramMusic } from "@/components/social/InstagramMusic";
 
 const typingStrings = [
   "Building AI-native micro-SaaS ecosystems",
@@ -250,7 +249,6 @@ export function Hero() {
                     {wibDate} — {wibTime} WIB — Online 24/7
                   </span>
                 </div>
-                <InstagramMusic />
               </div>
             )}
           </div>

@@ -49,7 +49,7 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-lg overflow-hidden ring-1 ring-border">
             <Image
-              src="/assets/company-logo.png"
+               src="/assets/company-logo.webp"
               alt={companyInfo.name}
               fill
               className="object-cover"

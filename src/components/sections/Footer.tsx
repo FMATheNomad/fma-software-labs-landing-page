@@ -56,7 +56,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8 rounded-lg overflow-hidden ring-1 ring-border">
                 <Image
-                  src="/assets/company-logo.png"
+                   src="/assets/company-logo.webp"
                   alt={companyInfo.name}
                   fill
                   className="object-cover"
