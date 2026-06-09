@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import {
   MessageSquare,
   Github,
@@ -13,6 +14,7 @@ import { companyInfo } from "@/lib/constants";
 import Link from "next/link";
 
 export function ContactSection() {
+  const { t } = useTranslation();
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
@@ -26,26 +28,24 @@ export function ContactSection() {
             <div className="flex justify-center mb-4">
               <Badge variant="neon" className="gap-2 px-4 py-1.5">
                 <MessageSquare className="h-3.5 w-3.5" />
-                Get in Touch
+                {t("contact.badge")}
               </Badge>
             </div>
-            <h2 className="section-title mb-4">Let&apos;s Talk</h2>
-            <p className="section-subtitle mx-auto">
-              Have a project idea? Want to collaborate? Or just want to say hi.
-            </p>
+            <h2 className="section-title mb-4">{t("contact.title")}</h2>
+            <p className="section-subtitle mx-auto">{t("contact.desc")}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Contact info */}
             <div className="lg:col-span-2 space-y-4">
               <div className="p-4 rounded-xl border border-border/50 bg-card/30">
-                <h3 className="font-semibold mb-3">Connect</h3>
+                <h3 className="font-semibold mb-3">{t("contact.connect")}</h3>
                 <div className="space-y-3">
                   {[
-                    { icon: Mail, label: "Email", value: "fmasoftwarelabs@gmail.com", href: "mailto:fmasoftwarelabs@gmail.com" },
-                    { icon: Github, label: "GitHub", value: "@FMATheNomad", href: companyInfo.social.github },
-                    { icon: Twitter, label: "X (Twitter)", value: "@fmathenomad", href: companyInfo.social.twitter },
-                    { icon: TelegramIcon, label: "Telegram", value: "@fmathenomad", href: companyInfo.social.telegram },
+                    { icon: Mail, label: t("contact.email"), value: "fmasoftwarelabs@gmail.com", href: "mailto:fmasoftwarelabs@gmail.com" },
+                    { icon: Github, label: t("contact.github"), value: "@FMATheNomad", href: companyInfo.social.github },
+                    { icon: Twitter, label: t("contact.twitter"), value: "@fmathenomad", href: companyInfo.social.twitter },
+                    { icon: TelegramIcon, label: t("contact.telegram"), value: "@fmathenomad", href: companyInfo.social.telegram },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
@@ -69,11 +69,8 @@ export function ContactSection() {
               </div>
 
               <div className="p-4 rounded-xl border border-border/50 bg-card/30">
-                <h3 className="font-semibold mb-2">Availability</h3>
-                <p className="text-sm text-muted-foreground">
-                  Currently open to collaborations, consulting, and interesting
-                  project opportunities. Remote-first, async-friendly.
-                </p>
+                <h3 className="font-semibold mb-2">{t("contact.availability")}</h3>
+                <p className="text-sm text-muted-foreground">{t("contact.available")}</p>
               </div>
             </div>
 
@@ -83,10 +80,10 @@ export function ContactSection() {
                 <Construction className="h-10 w-10 text-muted-foreground/40" />
                 <div>
                   <p className="text-sm font-medium text-muted-foreground">
-                    Contact form in development
+                    {t("contact.devNotice")}
                   </p>
                   <p className="text-xs text-muted-foreground/60 mt-2">
-                    Reach me directly at
+                    {t("contact.reachMe")}
                   </p>
                   <a
                     href="mailto:fmasoftwarelabs@gmail.com"

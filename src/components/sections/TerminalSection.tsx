@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Terminal as TerminalIcon } from "lucide-react";
 import { terminalLogs } from "@/lib/constants";
 
@@ -45,6 +46,7 @@ function LogLine({ entry, visible }: { entry: LogEntry; visible: boolean }) {
 }
 
 export function TerminalSection() {
+  const { t } = useTranslation();
   const [visibleLogs, setVisibleLogs] = useState<number>(0);
 
   useEffect(() => {
@@ -70,10 +72,8 @@ export function TerminalSection() {
 
       <div className="section-container relative">
         <div className="text-center mb-12">
-          <h2 className="section-title mb-4">Deploy Log</h2>
-          <p className="section-subtitle mx-auto">
-            Live system boot sequence. Watch our ecosystem initialize in real-time.
-          </p>
+          <h2 className="section-title mb-4">{t("terminal.title")}</h2>
+          <p className="section-subtitle mx-auto">{t("terminal.desc")}</p>
         </div>
 
         <div className="max-w-3xl mx-auto">

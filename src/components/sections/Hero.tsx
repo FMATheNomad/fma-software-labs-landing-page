@@ -191,7 +191,7 @@ export function Hero() {
               <Button size="xl" className="gap-2 w-full sm:w-auto" asChild>
                 <Link href="/products">
                   <Play className="h-5 w-5 fill-current" />
-                  Explore Products
+                  {t("hero.cta")}
                 </Link>
               </Button>
               <Button
@@ -202,7 +202,7 @@ export function Hero() {
               >
                 <Link href={companyInfo.social.github} target="_blank">
                   <Github className="h-5 w-5" />
-                  View on GitHub
+                  {t("hero.viewGitHub")}
                 </Link>
               </Button>
             </div>
@@ -211,24 +211,24 @@ export function Hero() {
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 max-w-3xl mx-auto">
               {[
                 {
-                  label: "Live Products",
+                  label: t("hero.stats.products"),
                   value: stats.loading ? "..." : `${products.length}+`,
                 },
                 {
-                  label: "Bot Users",
+                  label: t("hero.stats.botUsers"),
                   value: stats.loading ? "..." : stats.totalBotUsers > 0 ? `${stats.totalBotUsers.toLocaleString()}+` : "...",
                 },
                 {
-                  label: "Clients",
+                  label: t("hero.stats.clients"),
                   value: stats.loading ? "..." : `${stats.totalClients}+`,
                 },
                 {
-                  label: "Tech Stack",
+                  label: t("hero.stats.techStack"),
                   value: `${uniqueTechCount}+`,
                 },
                 {
-                  label: "Team",
-                  value: "1 (Solo)",
+                  label: t("hero.stats.team"),
+                  value: t("hero.stats.teamValue"),
                 },
               ].map((stat, i) => (
                 <div key={stat.label} className="animate-fade-in-up" style={{ animationDelay: `${(i + 1) * 200}ms` }}>
@@ -238,7 +238,7 @@ export function Hero() {
               ))}
             </div>
             <p className="text-xs text-muted-foreground mt-6 text-center font-mono">
-              Built by a solo engineer. No investors. No bloat. Just code.
+              {t("hero.builtBy")}
             </p>
             {wibTime && (
               <div className="flex flex-col items-center gap-1.5 mt-4 mb-8 sm:mb-12">
@@ -248,7 +248,7 @@ export function Hero() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-neon-green" />
                   </span>
                   <span className="text-xs text-muted-foreground font-mono">
-                    {wibDate} — {wibTime} WIB — Online 24/7
+                    {wibDate} — {wibTime} WIB — {t("hero.online")}
                   </span>
                 </div>
               </div>
@@ -259,7 +259,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="pb-6 sm:pb-8 flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
-        <span className="text-xs font-mono">Scroll</span>
+        <span className="text-xs font-mono">{t("hero.scroll")}</span>
         <div className="w-5 h-8 rounded-full border border-border flex items-start justify-center p-1">
           <div className="w-1 h-2 rounded-full bg-muted-foreground" />
         </div>

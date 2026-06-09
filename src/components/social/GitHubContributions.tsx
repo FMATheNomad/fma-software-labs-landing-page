@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
 import { Code2 } from "lucide-react";
 
@@ -20,6 +21,7 @@ const levelColors: Record<number, string> = {
 const dayLabels = ["Sun", "Mon", "", "Wed", "", "Fri", "Sat"];
 
 export function GitHubContributions() {
+  const { t } = useTranslation();
   const [data, setData] = useState<{
     totalContributions: number;
     days: DayData[];
@@ -65,10 +67,10 @@ export function GitHubContributions() {
           <div className="flex justify-center mb-4">
             <Badge variant="neon" className="gap-2 px-4 py-1.5">
               <Code2 className="h-3.5 w-3.5" />
-              GitHub
+              {t("github.badge")}
             </Badge>
           </div>
-          <h2 className="section-title mb-2">GitHub Activity</h2>
+          <h2 className="section-title mb-2">{t("github.title")}</h2>
           <p className="text-lg text-muted-foreground font-mono">
             {data.totalContributions.toLocaleString()} contributions in the last year
           </p>

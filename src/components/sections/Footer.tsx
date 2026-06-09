@@ -2,49 +2,41 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import { Github, Twitter, Send as TelegramIcon, Heart, Terminal } from "lucide-react";
 import { companyInfo } from "@/lib/constants";
 
-interface FooterLink {
-  label: string;
-  href: string;
-  external?: boolean;
-}
-
-interface FooterColumn {
-  title: string;
-  links: FooterLink[];
-}
-
-const footerLinks: FooterColumn[] = [
-  {
-    title: "Products",
-    links: [
-      { label: "All Products", href: "/products" },
-      { label: "DebtWar", href: "/products#debtwar" },
-      { label: "JatuhTempo", href: "/products#jatuhtempo" },
-      { label: "Prompt Toolkits", href: "/products#prompts" },
-    ],
-  },
-  {
-    title: "Sections",
-    links: [
-      { label: "Terminal", href: "#terminal" },
-      { label: "Philosophy", href: "#philosophy" },
-      { label: "Contact", href: "#contact" },
-    ],
-  },
-  {
-    title: "Social",
-    links: [
-      { label: "GitHub", href: companyInfo.social.github, external: true },
-      { label: "X (Twitter)", href: companyInfo.social.twitter, external: true },
-      { label: "Telegram", href: companyInfo.social.telegram, external: true },
-    ],
-  },
-];
-
 export function Footer() {
+  const { t } = useTranslation();
+
+  const footerLinks = [
+    {
+      title: t("footer.columns.products"),
+      links: [
+        { label: t("footer.links.allProducts"), href: "/products", external: false },
+        { label: "DebtWar", href: "/products#debtwar", external: false },
+        { label: "JatuhTempo", href: "/products#jatuhtempo", external: false },
+        { label: t("footer.links.promptToolkits"), href: "/products#prompts", external: false },
+      ],
+    },
+    {
+      title: t("footer.columns.sections"),
+      links: [
+        { label: t("footer.links.terminal"), href: "#terminal", external: false },
+        { label: t("footer.links.philosophy"), href: "#philosophy", external: false },
+        { label: t("footer.links.contact"), href: "#contact", external: false },
+      ],
+    },
+    {
+      title: t("footer.columns.social"),
+      links: [
+        { label: "GitHub", href: companyInfo.social.github, external: true },
+        { label: "X (Twitter)", href: companyInfo.social.twitter, external: true },
+        { label: t("contact.telegram"), href: companyInfo.social.telegram, external: true },
+      ],
+    },
+  ];
+
   return (
     <footer className="relative border-t border-border/50">
       <div className="absolute inset-0 grid-overlay opacity-20" />
@@ -56,7 +48,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="relative w-8 h-8 rounded-lg overflow-hidden ring-1 ring-border">
                 <Image
-                   src="/assets/company-logo.webp"
+                  src="/assets/company-logo.webp"
                   alt={companyInfo.name}
                   fill
                   className="object-cover"
@@ -66,7 +58,7 @@ export function Footer() {
               <span className="font-semibold text-sm">{companyInfo.name}</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {companyInfo.tagline}
+              {t("footer.tagline")}
             </p>
             <div className="flex items-center gap-3">
               {[
@@ -111,12 +103,12 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} {companyInfo.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {companyInfo.name}. {t("footer.rights")}
           </p>
           <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span>Built with</span>
+            <span>{t("footer.builtWith")}</span>
             <Heart className="h-3 w-3 text-red-500" />
-            <span>by</span>
+            <span>{t("footer.by")}</span>
             <span className="font-mono text-neon-green/70">FMATheNomad</span>
             <Terminal className="h-3 w-3" />
           </div>

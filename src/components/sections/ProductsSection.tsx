@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   Sparkles,
@@ -12,34 +13,34 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
-const categories = [
-  {
-    icon: Bot,
-    label: "SaaS & GaaS",
-    count: "4 Products",
-    desc: "Finance, game, data & construction tools",
-  },
-  {
-    icon: Puzzle,
-    label: "Prompt Products",
-    count: "5 Toolkits",
-    desc: "AI debug toolkits for developers",
-  },
-  {
-    icon: Code2,
-    label: "Boilerplate",
-    count: "Coming Soon",
-    desc: "Micro-SaaS & Micro-GaaS starter kits",
-  },
-  {
-    icon: Package,
-    label: "Software API",
-    count: "Coming Soon",
-    desc: "Ready-to-use API services",
-  },
-];
-
 export function ProductsSection() {
+  const { t } = useTranslation();
+  const categories = [
+    {
+      icon: Bot,
+      label: t("products.categories.saas"),
+      count: `4 ${t("products.counts.products")}`,
+      desc: t("products.descs.saas"),
+    },
+    {
+      icon: Puzzle,
+      label: t("products.categories.prompts"),
+      count: `5 ${t("products.counts.toolkits")}`,
+      desc: t("products.descs.prompts"),
+    },
+    {
+      icon: Code2,
+      label: t("products.categories.boilerplate"),
+      count: t("products.counts.comingSoon"),
+      desc: t("products.descs.boilerplate"),
+    },
+    {
+      icon: Package,
+      label: t("products.categories.api"),
+      count: t("products.counts.comingSoon"),
+      desc: t("products.descs.api"),
+    },
+  ];
   return (
     <section id="products" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0">
@@ -52,14 +53,11 @@ export function ProductsSection() {
           <div className="flex justify-center mb-4">
             <Badge variant="cyan" className="gap-2 px-4 py-1.5">
               <Sparkles className="h-3.5 w-3.5" />
-              Ecosystem
+              {t("products.badge")}
             </Badge>
           </div>
-          <h2 className="section-title mb-4">Our Products</h2>
-          <p className="section-subtitle mx-auto">
-            From live SaaS/GaaS bots to developer toolkits and upcoming
-            boilerplates — explore the full FMA ecosystem.
-          </p>
+          <h2 className="section-title mb-4">{t("products.title")}</h2>
+          <p className="section-subtitle mx-auto">{t("products.desc")}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
@@ -86,7 +84,7 @@ export function ProductsSection() {
         <div className="text-center">
           <Button size="xl" className="gap-3" asChild>
             <Link href="/products">
-              Explore All Products
+              {t("products.explore")}
               <ArrowRight className="h-5 w-5" />
             </Link>
           </Button>

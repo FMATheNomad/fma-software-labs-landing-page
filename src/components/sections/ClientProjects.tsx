@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import { Briefcase, ExternalLink, Github, CheckCircle2, MapPin, Camera, FileText, BarChart3 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,6 +36,7 @@ const statusConfig: Record<string, { label: string; variant: "neon" | "cyan" | "
 const featureIcons = [MapPin, Camera, FileText, BarChart3, CheckCircle2, CheckCircle2];
 
 export function ClientProjectsSection() {
+  const { t } = useTranslation();
   return (
     <section id="clients" className="section-padding relative">
       <div className="absolute inset-0">
@@ -46,13 +48,11 @@ export function ClientProjectsSection() {
           <div className="flex justify-center mb-4">
             <Badge variant="neon" className="gap-2 px-4 py-1.5">
               <Briefcase className="h-3.5 w-3.5" />
-              Client Project
+              {t("clientProjects.badge")}
             </Badge>
           </div>
-          <h2 className="section-title mb-4">Client Work</h2>
-          <p className="section-subtitle mx-auto">
-            Bespoke software built for businesses and organizations.
-          </p>
+          <h2 className="section-title mb-4">{t("clientProjects.title")}</h2>
+          <p className="section-subtitle mx-auto">{t("clientProjects.desc")}</p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -109,7 +109,7 @@ export function ClientProjectsSection() {
                     <ExternalLink className="h-3.5 w-3.5" />
                   </Button>
                   <span className="text-[10px] text-muted-foreground/50 font-mono">
-                    Private repository — contact for access
+                    {t("clientProjects.privateRepo")}
                   </span>
                 </div>
               </div>

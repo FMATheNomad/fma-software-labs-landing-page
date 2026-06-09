@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import {
   Code2,
   Database,
@@ -56,6 +57,7 @@ const techStack = [
 ];
 
 export function TechStackSection() {
+  const { t } = useTranslation();
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0">
@@ -67,13 +69,11 @@ export function TechStackSection() {
           <div className="flex justify-center mb-4">
             <Badge variant="cyan" className="gap-2 px-4 py-1.5">
               <Code2 className="h-3.5 w-3.5" />
-              Tech Stack
+              {t("techStack.badge")}
             </Badge>
           </div>
-          <h2 className="section-title mb-4">Our Arsenal</h2>
-          <p className="section-subtitle mx-auto">
-            The technologies powering our entire product ecosystem — from bots to backends.
-          </p>
+          <h2 className="section-title mb-4">{t("techStack.title")}</h2>
+          <p className="section-subtitle mx-auto">{t("techStack.desc")}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
