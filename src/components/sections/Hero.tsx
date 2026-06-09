@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, Play, Sparkles, Github, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +25,7 @@ interface StatsData {
 const uniqueTechCount = 38;
 
 export function Hero() {
+  const { t, i18n } = useTranslation();
   const [textIndex, setTextIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -156,8 +158,8 @@ export function Hero() {
             {/* Badge */}
             <div className="flex justify-center mb-6 animate-fade-in">
               <Badge variant="neon" className="px-4 py-1.5 text-sm gap-2">
-                <Sparkles className="h-3.5 w-3.5" />
-                AI-Native Software Lab
+              <Sparkles className="h-3.5 w-3.5" />
+              {t("hero.badge")}
               </Badge>
             </div>
 
@@ -181,7 +183,7 @@ export function Hero() {
 
             {/* Description */}
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              {companyInfo.description}
+              {t("hero.description")}
             </p>
 
             {/* CTA buttons */}

@@ -1,0 +1,161 @@
+const id: typeof import("./en").default = {
+  hero: {
+    badge: "Software Lab AI-Native",
+    headlinePrefix: "Kami Bangun",
+    headlineSuffix: "Masa Depan",
+    tagline: "Founder tunggal. Full-stack. Utamakan AI.",
+    taglines: [
+      "Membangun ekosistem micro-SaaS AI-native",
+      "Merekayasa masa depan social finance",
+      "Di mana kode bertemu ekonomi chaos",
+      "Founder tunggal. Full-stack. Utamakan AI.",
+      "Membuat toolkit & boilerplate developer",
+    ],
+    description:
+      "Kami adalah software lab AI-native yang membangun micro-SaaS, micro-GaaS, dan produk digital. Didirikan oleh seorang insinyur solo dengan visi menciptakan ekosistem digital futuristik yang memadukan interaksi sosial, gamifikasi, kecerdasan buatan, dan perangkat developer.",
+    cta: "Jelajahi Produk",
+    viewGitHub: "Lihat di GitHub",
+    stats: {
+      products: "Produk Aktif",
+      botUsers: "Pengguna Bot",
+      clients: "Klien",
+      techStack: "Tech Stack",
+      team: "Tim",
+      teamValue: "1 (Solo)",
+    },
+    builtBy: "Dibangun oleh insinyur solo. Tanpa investor. Tanpa bloat. Hanya kode.",
+    online: "Online 24/7",
+    scroll: "Gulir",
+  },
+  techStack: {
+    badge: "Tech Stack",
+    title: "Persenjataan Kami",
+    desc: "Teknologi yang mendukung seluruh ekosistem produk kami — dari bot hingga backend.",
+  },
+  github: {
+    badge: "GitHub",
+    title: "Aktivitas GitHub",
+  },
+  products: {
+    badge: "Ekosistem",
+    title: "Produk Kami",
+    desc: "Dari bot SaaS/GaaS langsung pakai hingga toolkit developer dan boilerplate — jelajahi ekosistem FMA.",
+    explore: "Jelajahi Semua Produk",
+    inDev: "Dalam Pengembangan",
+    categories: {
+      saas: "SaaS & GaaS",
+      prompts: "Produk Prompt",
+      boilerplate: "Boilerplate",
+      api: "Software API",
+    },
+    counts: {
+      products: "Produk",
+      toolkits: "Toolkit",
+      comingSoon: "Segera Hadir",
+    },
+    descs: {
+      saas: "Tool keuangan, game & konstruksi",
+      prompts: "Toolkit AI debug untuk developer",
+      boilerplate: "Starter kit Micro-SaaS & Micro-GaaS",
+      api: "Layanan API siap pakai",
+    },
+  },
+  clientProjects: {
+    badge: "Proyek Klien",
+    title: "Pekerjaan Klien",
+    desc: "Perangkat lunak khusus yang dibangun untuk bisnis dan organisasi.",
+    privateRepo: "Repositori privat — hubungi untuk akses",
+    status: {
+      inDev: "Dalam Pengembangan",
+    },
+  },
+  terminal: {
+    title: "Log Deploy",
+    desc: "Urutan boot sistem langsung. Saksikan ekosistem kami melakukan inisialisasi secara real-time.",
+  },
+  philosophy: {
+    badge: "Filosofi",
+    title: "Cara Kami Membangun",
+    desc: "Prinsip-prinsip rekayasa yang memandu setiap baris kode, setiap produk, dan setiap toolkit yang kami rilis.",
+    principles: [
+      {
+        title: "AI-Native sejak Awal",
+        desc: "Setiap produk yang kami bangun diperkaya dengan kecerdasan buatan sejak hari pertama. Bukan sebagai tambahan, tetapi sebagai prinsip arsitektur inti — dari bot SaaS hingga toolkit developer.",
+      },
+      {
+        title: "Arsitektur Micro-First",
+        desc: "Kami percaya pada produk kecil, fokus, dan kuat. Micro-SaaS, Micro-GaaS, paket prompt, boilerplate, dan layanan API — semuanya memecahkan masalah nyata tanpa bloat.",
+      },
+      {
+        title: "Perangkat untuk Developer",
+        desc: "Selain membangun produk sendiri, kami membuat toolkit dan boilerplate yang membantu developer lain mengirim lebih cepat. Prompt AI debug, templat starter, dan komponen yang dapat digunakan kembali.",
+      },
+      {
+        title: "Ekosistem Multi-Produk",
+        desc: "Dari bot Telegram langsung pakai hingga produk prompt digital dan layanan API yang akan datang — kami membangun di berbagai kategori, semuanya dalam satu ekosistem.",
+      },
+      {
+        title: "Sosial secara Default",
+        desc: "Setiap produk memiliki lapisan sosial. Kami membangun ekosistem tempat pengguna berinteraksi, bersaing, dan berkolaborasi — baik melalui bot Telegram maupun komunitas developer.",
+      },
+      {
+        title: "Kirim Cepat, Iterasi Lebih Cepat",
+        desc: "Produk tidak pernah selesai. Kami mengirim cepat, melakukan iterasi terus-menerus, dan berkembang bersama pengguna kami. Produk digital diperbarui, bot mendapat fitur baru, boilerplate disempurnakan.",
+      },
+    ],
+  },
+  newsletter: {
+    badge: "Tetap Terupdate",
+    title: "Gabung Lab",
+    desc: "Dapatkan akses awal ke produk baru, pembaruan fitur, dan wawasan rekayasa di balik layar. Bukan spam — hanya tech murni.",
+    devNotice: "Formulir newsletter dalam pengembangan",
+  },
+  contact: {
+    badge: "Hubungi Kami",
+    title: "Mari Bicara",
+    desc: "Punya ide proyek? Ingin berkolaborasi? Atau sekadar menyapa.",
+    connect: "Terhubung",
+    availability: "Ketersediaan",
+    available: "Saat ini terbuka untuk kolaborasi, konsultasi, dan peluang proyek menarik. Remote-first, async-friendly.",
+    devNotice: "Formulir kontak dalam pengembangan",
+    reachMe: "Hubungi langsung di",
+    email: "Email",
+    github: "GitHub",
+    twitter: "X (Twitter)",
+    telegram: "Telegram",
+  },
+  footer: {
+    tagline: "Membangun ekosistem micro-SaaS, micro-GaaS & produk digital AI-native",
+    builtWith: "Dibuat dengan",
+    by: "oleh",
+    columns: {
+      products: "Produk",
+      sections: "Bagian",
+      social: "Sosial",
+    },
+    links: {
+      allProducts: "Semua Produk",
+      promptToolkits: "Toolkit Prompt",
+      terminal: "Terminal",
+      philosophy: "Filosofi",
+      contact: "Kontak",
+    },
+    rights: "Hak cipta dilindungi.",
+  },
+  productsPage: {
+    title: "Semua yang Kami Bangun",
+    desc: "Dari bot Telegram langsung pakai dan alat bertenaga AI hingga kit prompt developer dan boilerplate yang akan datang — jelajahi seluruh ekosistem FMA Software Labs.",
+  },
+  terminalSplash: {
+    welcome: "Selamat datang di FMA Software Labs.",
+    instructions: "Ketik perintah di bawah untuk masuk.",
+    placeholder: "ketik fma run",
+    notFound: "perintah tidak ditemukan",
+    tryCommand: "Coba: fma run — untuk masuk",
+    available: "Tersedia",
+    skip: "atau tutup untuk lewati",
+    enter: "Tekan Enter untuk lanjut",
+  },
+};
+
+export default id;

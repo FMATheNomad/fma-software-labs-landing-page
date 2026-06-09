@@ -1,0 +1,161 @@
+const en = {
+  hero: {
+    badge: "AI-Native Software Lab",
+    headlinePrefix: "We Build",
+    headlineSuffix: "The Future",
+    tagline: "Solo-founder. Full-stack. AI-first.",
+    taglines: [
+      "Building AI-native micro-SaaS ecosystems",
+      "Engineering the future of social finance",
+      "Where code meets chaos economies",
+      "Solo-founder. Full-stack. AI-first.",
+      "Crafting developer toolkits & boilerplates",
+    ],
+    description:
+      "We are an AI-native software lab building micro-SaaS, micro-GaaS, and digital products. Founded by a solo engineer with a vision to create futuristic digital ecosystems that blend social interaction, gamification, artificial intelligence, and developer tooling.",
+    cta: "Explore Products",
+    viewGitHub: "View on GitHub",
+    stats: {
+      products: "Live Products",
+      botUsers: "Bot Users",
+      clients: "Clients",
+      techStack: "Tech Stack",
+      team: "Team",
+      teamValue: "1 (Solo)",
+    },
+    builtBy: "Built by a solo engineer. No investors. No bloat. Just code.",
+    online: "Online 24/7",
+    scroll: "Scroll",
+  },
+  techStack: {
+    badge: "Tech Stack",
+    title: "Our Arsenal",
+    desc: "The technologies powering our entire product ecosystem — from bots to backends.",
+  },
+  github: {
+    badge: "GitHub",
+    title: "GitHub Activity",
+  },
+  products: {
+    badge: "Ecosystem",
+    title: "Our Products",
+    desc: "From live SaaS/GaaS bots to developer toolkits and upcoming boilerplates — explore the full FMA ecosystem.",
+    explore: "Explore All Products",
+    inDev: "In Development",
+    categories: {
+      saas: "SaaS & GaaS",
+      prompts: "Prompt Products",
+      boilerplate: "Boilerplate",
+      api: "Software API",
+    },
+    counts: {
+      products: "Products",
+      toolkits: "Toolkits",
+      comingSoon: "Coming Soon",
+    },
+    descs: {
+      saas: "Finance, game, data & construction tools",
+      prompts: "AI debug toolkits for developers",
+      boilerplate: "Micro-SaaS & Micro-GaaS starter kits",
+      api: "Ready-to-use API services",
+    },
+  },
+  clientProjects: {
+    badge: "Client Project",
+    title: "Client Work",
+    desc: "Bespoke software built for businesses and organizations.",
+    privateRepo: "Private repository — contact for access",
+    status: {
+      inDev: "In Development",
+    },
+  },
+  terminal: {
+    title: "Deploy Log",
+    desc: "Live system boot sequence. Watch our ecosystem initialize in real-time.",
+  },
+  philosophy: {
+    badge: "Philosophy",
+    title: "How We Build",
+    desc: "Engineering principles that guide every line of code, every product, and every toolkit we ship.",
+    principles: [
+      {
+        title: "AI-Native by Design",
+        desc: "Every product we build is infused with artificial intelligence from day one. Not as an afterthought, but as a core architectural principle — from SaaS bots to developer toolkits.",
+      },
+      {
+        title: "Micro-First Architecture",
+        desc: "We believe in small, focused, and powerful products. Micro-SaaS, Micro-GaaS, prompt packs, boilerplates, and API services — all solving real problems without bloat.",
+      },
+      {
+        title: "Developer-Focused Tooling",
+        desc: "Beyond building our own products, we create toolkits and boilerplates that help other developers ship faster. AI debug prompts, starter templates, and reusable components.",
+      },
+      {
+        title: "Multi-Product Ecosystem",
+        desc: "From live Telegram bots to digital prompt products and upcoming API services — we build across multiple categories, all under one ecosystem.",
+      },
+      {
+        title: "Social by Default",
+        desc: "Every product has a social layer. We build ecosystems where users interact, compete, and collaborate — whether through Telegram bots or developer communities.",
+      },
+      {
+        title: "Ship Fast, Iterate Faster",
+        desc: "Products are never finished. We ship fast, iterate constantly, and evolve with our users. Digital products get updated, bots get new features, boilerplates get refined.",
+      },
+    ],
+  },
+  newsletter: {
+    badge: "Stay Updated",
+    title: "Join the Lab",
+    desc: "Get early access to new products, feature updates, and behind-the-scenes engineering insights. No spam — just pure tech.",
+    devNotice: "Newsletter form in development",
+  },
+  contact: {
+    badge: "Get in Touch",
+    title: "Let's Talk",
+    desc: "Have a project idea? Want to collaborate? Or just want to say hi.",
+    connect: "Connect",
+    availability: "Availability",
+    available: "Currently open to collaborations, consulting, and interesting project opportunities. Remote-first, async-friendly.",
+    devNotice: "Contact form in development",
+    reachMe: "Reach me directly at",
+    email: "Email",
+    github: "GitHub",
+    twitter: "X (Twitter)",
+    telegram: "Telegram",
+  },
+  footer: {
+    tagline: "Building AI-native micro-SaaS, micro-GaaS & digital product ecosystems",
+    builtWith: "Built with",
+    by: "by",
+    columns: {
+      products: "Products",
+      sections: "Sections",
+      social: "Social",
+    },
+    links: {
+      allProducts: "All Products",
+      promptToolkits: "Prompt Toolkits",
+      terminal: "Terminal",
+      philosophy: "Philosophy",
+      contact: "Contact",
+    },
+    rights: "All rights reserved.",
+  },
+  productsPage: {
+    title: "Everything We Build",
+    desc: "From live Telegram bots and AI-powered tools to developer prompt kits and upcoming boilerplates — explore the full FMA Software Labs ecosystem.",
+  },
+  terminalSplash: {
+    welcome: "Welcome to FMA Software Labs.",
+    instructions: "Type the command below to enter.",
+    placeholder: "type fma run",
+    notFound: "command not found",
+    tryCommand: "Try: fma run — to launch the experience",
+    available: "Available",
+    skip: "or close to skip",
+    enter: "Press Enter to submit",
+  },
+};
+
+export default en;

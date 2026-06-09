@@ -4,22 +4,28 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Terminal, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Menu, X, Sun, Moon, Terminal, Github, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { companyInfo } from "@/lib/constants";
 
-const navLinks = [
-  { href: "/#products", label: "Products" },
-  { href: "/#terminal", label: "Terminal" },
-  { href: "/#philosophy", label: "How We Build" },
-  { href: "/#contact", label: "Contact" },
-];
-
 export function Navbar() {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  const navLinks = [
+    { href: "/#products", label: t("products.title") },
+    { href: "/#terminal", label: t("footer.links.terminal") },
+    { href: "/#philosophy", label: t("footer.links.philosophy") },
+    { href: "/#contact", label: t("footer.links.contact") },
+  ];
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "id" : "en");
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -92,6 +98,17 @@ export function Navbar() {
           </Button>
 
           <Button
+            variant="ghost"
+            size="sm"
+            onClick={toggleLang}
+            className="hidden sm:inline-flex gap-1 text-xs font-mono"
+            aria-label="Toggle language"
+          >
+            <Languages className="h-3.5 w-3.5" />
+            {i18n.language === "en" ? "ID" : "EN"}
+          </Button>
+
+          <Button
             variant="terminal"
             size="sm"
             className="hidden sm:inline-flex gap-2"
@@ -150,6 +167,10 @@ export function Navbar() {
               <Link href={companyInfo.social.github} target="_blank" aria-label="GitHub">
                 <Github className="h-4 w-4" />
               </Link>
+            </Button>
+            <Button variant="ghost" size="sm" onClick={toggleLang} className="gap-1 text-xs font-mono">
+              <Languages className="h-3.5 w-3.5" />
+              {i18n.language === "en" ? "ID" : "EN"}
             </Button>
             <Button variant="terminal" size="sm" asChild>
               <Link href="#terminal" onClick={() => setIsMobileOpen(false)}>

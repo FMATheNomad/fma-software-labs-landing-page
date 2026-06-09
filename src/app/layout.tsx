@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TerminalProvider } from "@/components/TerminalProvider";
+import { I18nProvider } from "@/components/I18nProvider";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import "./globals.css";
@@ -82,11 +83,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="noise-bg" />
+          <I18nProvider>
           <TerminalProvider>
             <Navbar />
             <main>{children}</main>
             <Footer />
           </TerminalProvider>
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>
