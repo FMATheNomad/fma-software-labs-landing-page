@@ -204,7 +204,7 @@ export const terminalLogs: Array<{
   { type: "info", message: "FMA Software Labs — boot sequence initiated", delay: 0 },
   { type: "success", message: "Kernel loaded: AI-native ecosystem engine v3.0.0", delay: 800 },
   { type: "info", message: "Mounting product ecosystem...", delay: 1600 },
-  { type: "success", message: "JatuhTempo — AI-Powered Debt Management [ONLINE]", delay: 2400 },
+  { type: "success", message: "JatuhTempo — AI-Powered Debt Management [IN DEV]", delay: 2400 },
   { type: "success", message: "DebtWar — Social Chaos Economy MMO [PARKED]", delay: 3200 },
   { type: "success", message: "RupiahPulse — Real-Time Rupiah Health Index [ONLINE]", delay: 4000 },
   { type: "success", message: "Minicrane — Konstruksi Project Management [IN DEV]", delay: 4800 },
