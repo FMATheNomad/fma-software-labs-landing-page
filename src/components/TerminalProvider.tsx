@@ -17,8 +17,7 @@ export function TerminalProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const d = sessionStorage.getItem("fma-terminal-dismissed");
-    setShow(!d);
+    setShow(false);
   }, []);
 
   useEffect(() => {
