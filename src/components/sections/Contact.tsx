@@ -17,7 +17,7 @@ export function ContactSection() {
               Contact
             </Badge>
           </div>
-          <h2 className="section-title mb-4">Let's Connect</h2>
+          <h2 className="section-title mb-4">Let&apos;s Connect</h2>
           <p className="section-subtitle mx-auto mb-10">
             Reach out directly — I reply within hours, not days.
           </p>
