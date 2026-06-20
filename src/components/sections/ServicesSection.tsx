@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import { Sparkles, Bot, MessageCircle, Zap, Shield, HeadphonesIcon, BarChart3 } from "lucide-react";
+import { Sparkles, Bot, MessageCircle, Zap, Shield, HeadphonesIcon, BarChart3, Building2, Stethoscope, GraduationCap, Store } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -54,22 +54,81 @@ export function ServicesSection() {
           ))}
         </div>
 
-        <div className="max-w-2xl mx-auto p-6 sm:p-8 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm text-center">
-          <h3 className="text-xl font-bold mb-2">{t("services.pricing.title")}</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-            <div className="p-5 rounded-lg border border-border/40 bg-background/50">
-              <div className="text-xs text-muted-foreground font-mono mb-1">{t("services.pricing.oneTime")}</div>
-              <div className="text-3xl font-bold text-neon-green">Rp 5jt</div>
-              <div className="text-xs text-muted-foreground mt-2">{t("services.pricing.setup")}</div>
-            </div>
-            <div className="p-5 rounded-lg border border-neon-green/30 bg-neon-green/5">
-              <div className="text-xs text-muted-foreground font-mono mb-1">{t("services.pricing.monthly")}</div>
-              <div className="text-3xl font-bold text-neon-green">Rp 500rb</div>
-              <div className="text-xs text-muted-foreground mt-2">{t("services.pricing.perMonth")}</div>
-            </div>
+        {/* Pricing Tiers */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h3 className="text-xl font-bold text-center mb-8">{t("services.pricing.title")}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              {
+                name: t("services.pricing.starterName"),
+                setup: "Rp 3jt",
+                retainer: "Rp 1jt",
+                target: t("services.pricing.starterTarget"),
+                border: "border-border/40",
+                bg: "bg-background/50",
+              },
+              {
+                name: t("services.pricing.growthName"),
+                setup: "Rp 5jt",
+                retainer: "Rp 1.5jt",
+                target: t("services.pricing.growthTarget"),
+                border: "border-neon-green/30",
+                bg: "bg-neon-green/5",
+                popular: true,
+              },
+              {
+                name: t("services.pricing.enterpriseName"),
+                setup: "Rp 10jt",
+                retainer: "Rp 2.5jt",
+                target: t("services.pricing.enterpriseTarget"),
+                border: "border-border/40",
+                bg: "bg-background/50",
+              },
+            ].map((tier) => (
+              <div
+                key={tier.setup}
+                className={`p-5 rounded-xl border ${tier.border} ${tier.bg} text-center relative`}
+              >
+                {(tier as any).popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-neon-green text-black text-[10px] font-mono rounded-full">
+                    Recommended
+                  </div>
+                )}
+                <h4 className="font-semibold mb-3">{tier.name}</h4>
+                <div className="text-2xl font-bold text-neon-green">{tier.setup}</div>
+                <div className="text-xs text-muted-foreground mb-1">{t("services.pricing.setupFee")}</div>
+                <div className="text-lg font-semibold mt-3">+ {tier.retainer}</div>
+                <div className="text-xs text-muted-foreground mb-3">{t("services.pricing.perMonth")}</div>
+                <div className="text-[10px] text-muted-foreground/60 mt-2">{tier.target}</div>
+              </div>
+            ))}
           </div>
-          <p className="text-xs text-muted-foreground mt-4">{t("services.pricing.trial")}</p>
-          <Button size="lg" className="mt-6 gap-2" asChild>
+          <p className="text-xs text-muted-foreground text-center mt-4">{t("services.pricing.note")}</p>
+        </div>
+
+        {/* Target Verticals */}
+        <div className="max-w-3xl mx-auto mb-12 p-6 rounded-xl border border-border/50 bg-card/20">
+          <h3 className="text-center font-semibold mb-6">{t("services.verticals.title")}</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { icon: Stethoscope, label: t("services.verticals.clinic") },
+              { icon: Building2, label: t("services.verticals.property") },
+              { icon: Store, label: t("services.verticals.franchise") },
+              { icon: GraduationCap, label: t("services.verticals.education") },
+            ].map((v) => {
+              const Icon = v.icon;
+              return (
+                <div key={v.label} className="text-center p-3 rounded-lg bg-background/50">
+                  <Icon className="h-6 w-6 mx-auto mb-2 text-primary/70" />
+                  <div className="text-xs font-medium">{v.label}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="gap-2" asChild>
             <Link href="https://wa.me/6285179626821?text=Halo%2C%20saya%20tertarik%20dengan%20AI%20WhatsApp%20Customer%20Service">
               <MessageCircle className="h-5 w-5" />
               {t("services.pricing.cta")}
