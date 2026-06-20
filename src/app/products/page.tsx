@@ -28,6 +28,7 @@ import {
   GraduationCap,
   Store,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { products, promptProducts } from "@/lib/constants";
@@ -181,6 +182,7 @@ function PromptProductCard({ product }: { product: typeof promptProducts[0] }) {
 }
 
 export default function ProductsPage() {
+  const { t } = useTranslation();
   return (
     <div className="pt-24 sm:pt-28">
       {/* Header */}
@@ -192,14 +194,14 @@ export default function ProductsPage() {
           <div className="flex justify-center mb-4">
             <Badge variant="neon" className="gap-2 px-4 py-1.5">
               <Sparkles className="h-3.5 w-3.5" />
-              Product Ecosystem
+              {t("productsPage.title")}
             </Badge>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
             Everything We <span className="text-gradient">Build</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            From live Telegram bots and AI-powered tools to developer prompt kits and upcoming boilerplates — explore the full FMA Software Labs ecosystem.
+            {t("productsPage.desc")}
           </p>
         </div>
       </section>
@@ -211,7 +213,7 @@ export default function ProductsPage() {
             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
               <Bot className="h-4 w-4 text-primary" />
             </div>
-            <h2 className="text-2xl font-bold">SaaS & GaaS</h2>
+            <h2 className="text-2xl font-bold">{t("products.categories.saas")}</h2>
             <Badge variant="neon" className="text-xs">Live</Badge>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
