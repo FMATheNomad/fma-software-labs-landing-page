@@ -22,6 +22,7 @@ const projects = [
     ],
     stars: "New",
     license: "MIT",
+    skills: "https://www.skills.sh/fmathenomad/deep-research-skill/deep-research",
   },
   {
     name: "Railway Deploy Skill",
@@ -38,6 +39,7 @@ const projects = [
     ],
     stars: "New",
     license: "MIT",
+    skills: "https://skills.sh/FMATheNomad/railway-deploy-skill/railway-deploy",
   },
 ];
 
@@ -104,9 +106,9 @@ export function OpenSourceSection() {
                   </Link>
                 </Button>
                 <Button variant="outline" className="gap-2 flex-1" asChild>
-                  <Link href={project.repo} target="_blank">
+                  <Link href={project.skills} target="_blank">
                     <Download className="h-4 w-4" />
-                    One-Line Install
+                    skills.sh
                     <ExternalLink className="h-3.5 w-3.5" />
                   </Link>
                 </Button>

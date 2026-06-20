@@ -353,11 +353,13 @@ export default function ProductsPage() {
                 name: "Deep Research Skill",
                 desc: "Browse hundreds of sources in parallel inside your AI coding agent. No API keys, no limits, completely free.",
                 repo: "https://github.com/FMATheNomad/deep-research-skill",
+                skills: "https://www.skills.sh/fmathenomad/deep-research-skill/deep-research",
               },
               {
                 name: "Railway Deploy Skill",
                 desc: "AI agent that autonomously diagnoses and fixes Railway deployment crashes — OOM, healthcheck, DB errors, and more.",
                 repo: "https://github.com/FMATheNomad/railway-deploy-skill",
+                skills: "https://skills.sh/FMATheNomad/railway-deploy-skill/railway-deploy",
               },
             ].map((oss) => (
               <div key={oss.name} className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm">
@@ -366,13 +368,22 @@ export default function ProductsPage() {
                   <h3 className="font-semibold">{oss.name}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">{oss.desc}</p>
-                <Button variant="outline" size="sm" className="gap-2" asChild>
-                  <Link href={oss.repo} target="_blank">
-                    <Github className="h-4 w-4" />
-                    View on GitHub
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </Link>
-                </Button>
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                    <Link href={oss.repo} target="_blank">
+                      <Github className="h-4 w-4" />
+                      GitHub
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                    <Link href={oss.skills} target="_blank">
+                      <Download className="h-4 w-4" />
+                      skills.sh
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             ))}
           </div>
