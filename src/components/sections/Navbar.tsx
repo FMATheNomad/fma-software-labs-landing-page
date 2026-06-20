@@ -17,8 +17,8 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
 
   const navLinks = [
+    { href: "/#services", label: "Services" },
     { href: "/#products", label: t("products.title") },
-    { href: "/#terminal", label: t("footer.links.terminal") },
     { href: "/#philosophy", label: t("footer.links.philosophy") },
     { href: "/#contact", label: t("footer.links.contact") },
   ];
