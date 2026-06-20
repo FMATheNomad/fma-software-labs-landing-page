@@ -16,6 +16,17 @@ import {
   Package,
   Cpu,
   Globe,
+  Download,
+  Star,
+  MessageCircle,
+  Zap,
+  Shield,
+  HeadphonesIcon,
+  BarChart3,
+  Stethoscope,
+  Building2,
+  GraduationCap,
+  Store,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -275,6 +286,95 @@ export default function ProductsPage() {
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
               We&apos;re building API services for image processing, data validation, currency conversion, and AI-powered content moderation. Stay tuned.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Services */}
+      <section className="section-padding pt-0 relative">
+        <div className="section-container">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Bot className="h-4 w-4 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">AI WhatsApp Automation</h2>
+            <Badge variant="neon" className="text-xs">Available</Badge>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Done-for-you WhatsApp AI chatbot for clinics, property, franchises, and education. Setup fee + monthly retainer.
+          </p>
+          <div className="p-8 rounded-xl border border-border/50 bg-card/20 text-center">
+            <MessageCircle className="h-10 w-10 text-neon-green/60 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-2">AI Customer Service WhatsApp</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mt-6 mb-6">
+              <div className="p-4 rounded-lg border border-border/40 bg-background/40">
+                <div className="text-xs text-muted-foreground">Starter</div>
+                <div className="text-lg font-bold text-neon-green mt-1">Rp 3jt</div>
+                <div className="text-xs text-muted-foreground">+ Rp 1jt/bln</div>
+              </div>
+              <div className="p-4 rounded-lg border border-neon-green/30 bg-neon-green/5">
+                <div className="text-xs text-muted-foreground">Growth</div>
+                <div className="text-lg font-bold text-neon-green mt-1">Rp 5jt</div>
+                <div className="text-xs text-muted-foreground">+ Rp 1.5jt/bln</div>
+              </div>
+              <div className="p-4 rounded-lg border border-border/40 bg-background/40">
+                <div className="text-xs text-muted-foreground">Enterprise</div>
+                <div className="text-lg font-bold text-neon-green mt-1">Rp 10jt</div>
+                <div className="text-xs text-muted-foreground">+ Rp 2.5jt/bln</div>
+              </div>
+            </div>
+            <Button className="gap-2" asChild>
+              <Link href="https://wa.me/6285179626821?text=Halo%2C%20saya%20tertarik%20dengan%20AI%20WhatsApp%20Customer%20Service" target="_blank">
+                <MessageCircle className="h-4 w-4" />
+                Contact via WhatsApp
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source */}
+      <section className="section-padding pt-0 relative">
+        <div className="section-container">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Github className="h-4 w-4 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">Open Source</h2>
+            <Badge variant="neon" className="text-xs">MIT</Badge>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Free tools for the developer community. Open source, MIT licensed.
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {[
+              {
+                name: "Deep Research Skill",
+                desc: "Browse hundreds of sources in parallel inside your AI coding agent. No API keys, no limits, completely free.",
+                repo: "https://github.com/FMATheNomad/deep-research-skill",
+              },
+              {
+                name: "Railway Deploy Skill",
+                desc: "AI agent that autonomously diagnoses and fixes Railway deployment crashes — OOM, healthcheck, DB errors, and more.",
+                repo: "https://github.com/FMATheNomad/railway-deploy-skill",
+              },
+            ].map((oss) => (
+              <div key={oss.name} className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-3">
+                  <Star className="h-4 w-4 text-neon-green/70" />
+                  <h3 className="font-semibold">{oss.name}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">{oss.desc}</p>
+                <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <Link href={oss.repo} target="_blank">
+                    <Github className="h-4 w-4" />
+                    View on GitHub
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
