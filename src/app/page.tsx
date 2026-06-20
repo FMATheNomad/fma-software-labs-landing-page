@@ -3,6 +3,7 @@ import { GitHubContributions } from "@/components/social/GitHubContributions";
 import { TechStackSection } from "@/components/sections/TechStackSection";
 import { TerminalSection } from "@/components/sections/TerminalSection";
 import { ProductsSection } from "@/components/sections/ProductsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ClientProjectsSection } from "@/components/sections/ClientProjects";
 import { PhilosophySection } from "@/components/sections/Philosophy";
 import { NewsletterSection } from "@/components/sections/Newsletter";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <GitHubContributions />
       <TechStackSection />
       <ProductsSection />
+      <ServicesSection />
       <ClientProjectsSection />
       <TerminalSection />
       <PhilosophySection />
