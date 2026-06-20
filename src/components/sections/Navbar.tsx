@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
-import { Menu, X, Sun, Moon, Terminal, Github, Languages } from "lucide-react";
+import { Menu, X, Sun, Moon, Github, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { companyInfo } from "@/lib/constants";
@@ -108,18 +108,6 @@ export function Navbar() {
           </Button>
 
           <Button
-            variant="terminal"
-            size="sm"
-            className="hidden sm:inline-flex gap-2"
-            asChild
-          >
-            <Link href="#terminal">
-              <Terminal className="h-3.5 w-3.5" />
-              <span>Terminal</span>
-            </Link>
-          </Button>
-
-          <Button
             variant="ghost"
             size="icon"
             className="md:hidden"
@@ -170,12 +158,6 @@ export function Navbar() {
             <Button variant="ghost" size="sm" onClick={toggleLang} className="gap-1 text-xs font-mono">
               <Languages className="h-3.5 w-3.5" />
               {i18n.language === "en" ? "ID" : "EN"}
-            </Button>
-            <Button variant="terminal" size="sm" asChild>
-              <Link href="#terminal" onClick={() => setIsMobileOpen(false)}>
-                <Terminal className="h-3.5 w-3.5" />
-                Terminal
-              </Link>
             </Button>
           </div>
         </div>
