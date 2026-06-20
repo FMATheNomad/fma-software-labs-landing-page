@@ -98,20 +98,29 @@ export function OpenSourceSection() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-border/50">
-                <Button className="gap-2 flex-1" asChild>
+                <Button className="gap-2 flex-[1.5]" asChild>
                   <Link href={project.repo} target="_blank">
                     <Github className="h-4 w-4" />
                     View on GitHub
                     <ExternalLink className="h-3.5 w-3.5" />
                   </Link>
                 </Button>
-                <Button variant="outline" className="gap-2 flex-1" asChild>
-                  <Link href={project.skills} target="_blank">
-                    <Download className="h-4 w-4" />
-                    skills.sh
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </Link>
-                </Button>
+                <div className="flex gap-2 flex-1">
+                  <Button variant="outline" className="gap-2 flex-1" asChild>
+                    <Link href={project.skills} target="_blank">
+                      <Download className="h-4 w-4" />
+                      skills.sh
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                  <Button variant="outline" className="gap-2 flex-1" asChild>
+                    <Link href={project.repo} target="_blank">
+                      <Download className="h-4 w-4" />
+                      Install
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
