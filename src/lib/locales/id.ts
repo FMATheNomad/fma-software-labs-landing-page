@@ -47,17 +47,23 @@ const id: typeof import("./en").default = {
       prompts: "Produk Prompt",
       boilerplate: "Boilerplate",
       api: "Software API",
+      services: "Layanan AI",
+      oss: "Open Source",
     },
     counts: {
       products: "Produk",
       toolkits: "Toolkit",
       comingSoon: "Segera Hadir",
+      available: "Tersedia",
+      mit: "MIT",
     },
     descs: {
       saas: "Tool keuangan, game & konstruksi",
       prompts: "Toolkit AI debug untuk developer",
       boilerplate: "Starter kit Micro-SaaS & Micro-GaaS",
       api: "Layanan API siap pakai",
+      services: "WhatsApp automation untuk bisnis",
+      oss: "Tools & skill developer gratis",
     },
   },
   clientProjects: {

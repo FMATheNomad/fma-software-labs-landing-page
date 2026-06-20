@@ -47,17 +47,23 @@ const en = {
       prompts: "Prompt Products",
       boilerplate: "Boilerplate",
       api: "Software API",
+      services: "AI Services",
+      oss: "Open Source",
     },
     counts: {
       products: "Products",
       toolkits: "Toolkits",
       comingSoon: "Coming Soon",
+      available: "Available",
+      mit: "MIT",
     },
     descs: {
       saas: "Finance, game, data & construction tools",
       prompts: "AI debug toolkits for developers",
       boilerplate: "Micro-SaaS & Micro-GaaS starter kits",
       api: "Ready-to-use API services",
+      services: "WhatsApp automation for business",
+      oss: "Free developer tools & skills",
     },
   },
   clientProjects: {

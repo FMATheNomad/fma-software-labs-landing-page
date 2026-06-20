@@ -44,15 +44,15 @@ export function ProductsSection() {
     },
     {
       icon: MessageCircle,
-      label: "AI Services",
-      count: "Available",
-      desc: "WhatsApp automation for business",
+      label: t("products.categories.services"),
+      count: t("products.counts.available"),
+      desc: t("products.descs.services"),
     },
     {
       icon: Github,
-      label: "Open Source",
-      count: "MIT",
-      desc: "Free developer tools & skills",
+      label: t("products.categories.oss"),
+      count: t("products.counts.mit"),
+      desc: t("products.descs.oss"),
     },
   ];
   return (
