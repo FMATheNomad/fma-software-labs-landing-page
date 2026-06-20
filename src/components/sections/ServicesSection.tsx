@@ -94,7 +94,7 @@ export function ServicesSection() {
           </div>
           <p className="text-xs text-muted-foreground mt-4">7-day free trial available. No risk.</p>
           <Button size="lg" className="mt-6 gap-2" asChild>
-            <Link href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20AI%20WhatsApp%20Customer%20Service">
+            <Link href="https://wa.me/6285179626821?text=Halo%2C%20saya%20tertarik%20dengan%20AI%20WhatsApp%20Customer%20Service">
               <MessageCircle className="h-5 w-5" />
               Contact via WhatsApp
             </Link>
