@@ -146,6 +146,28 @@ const id: typeof import("./en").default = {
     title: "Semua yang Kami Bangun",
     desc: "Dari bot Telegram langsung pakai dan alat bertenaga AI hingga kit prompt developer dan boilerplate yang akan datang — jelajahi seluruh ekosistem FMA Software Labs.",
   },
+  services: {
+    badge: "Layanan AI",
+    title: "AI Layanan Pelanggan WhatsApp",
+    desc: "Balas otomatis bertenaga AI untuk WhatsApp bisnis Anda. Layanan pelanggan 24/7 tanpa perlu merekrut staf tambahan.",
+    features: [
+      { title: "Balas Otomatis 24/7", desc: "Langsung jawab cek stok, harga, jam buka, lokasi, dan FAQ — bahkan jam 3 pagi." },
+      { title: "Dialihkan ke Manusia", desc: "Pertanyaan kompleks diteruskan ke pemilik. Anda hanya menangani yang penting." },
+      { title: "Dashboard Analitik", desc: "Lihat riwayat chat, tingkat respons, dan pertanyaan umum. Kenali pelanggan Anda lebih baik." },
+      { title: "Mudah Dipasang", desc: "Siap dalam 2-3 hari. Tanpa integrasi rumit. Cukup hubungkan nomor WhatsApp Anda." },
+      { title: "Ditenagai AI", desc: "Didukung GPT-4o & Claude. Memahami Bahasa Indonesia secara alami." },
+      { title: "Dukungan Berkelanjutan", desc: "Termasuk perawatan gratis. Kami memantau dan meningkatkan sistem secara terus-menerus." },
+    ],
+    pricing: {
+      title: "Harga",
+      oneTime: "Sekali Bayar",
+      monthly: "Bulanan",
+      setup: "Setup + 1 bulan perawatan",
+      perMonth: "Per bulan, tanpa kontrak jangka panjang",
+      trial: "Trial gratis 7 hari. Tanpa risiko.",
+      cta: "Hubungi via WhatsApp",
+    },
+  },
   terminalSplash: {
     welcome: "Selamat datang di FMA Software Labs.",
     instructions: "Ketik perintah di bawah untuk masuk.",

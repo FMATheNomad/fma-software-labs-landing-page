@@ -146,6 +146,28 @@ const en = {
     title: "Everything We Build",
     desc: "From live Telegram bots and AI-powered tools to developer prompt kits and upcoming boilerplates — explore the full FMA Software Labs ecosystem.",
   },
+  services: {
+    badge: "AI Services",
+    title: "AI WhatsApp Customer Service",
+    desc: "AI-powered auto-reply for your business WhatsApp. 24/7 customer service without hiring extra staff.",
+    features: [
+      { title: "Auto Reply 24/7", desc: "Instantly answers stock checks, prices, operating hours, location, and FAQs — even at 3 AM." },
+      { title: "Human Handoff", desc: "Complex questions smoothly forwarded to you. You only handle what matters." },
+      { title: "Dashboard Analytics", desc: "See chat history, response rates, and common questions. Know your customers better." },
+      { title: "Easy Setup", desc: "Ready in 2-3 days. No complex integration. Just connect your WhatsApp number." },
+      { title: "AI-Powered", desc: "Powered by GPT-4o & Claude. Understands Bahasa Indonesia naturally." },
+      { title: "Ongoing Support", desc: "Free maintenance included. We monitor and improve the system continuously." },
+    ],
+    pricing: {
+      title: "Pricing",
+      oneTime: "One-Time",
+      monthly: "Monthly",
+      setup: "Setup + 1 month maintenance",
+      perMonth: "Per month, no long-term contract",
+      trial: "7-day free trial available. No risk.",
+      cta: "Contact via WhatsApp",
+    },
+  },
   terminalSplash: {
     welcome: "Welcome to FMA Software Labs.",
     instructions: "Type the command below to enter.",
