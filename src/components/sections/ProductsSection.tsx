@@ -9,6 +9,8 @@ import {
   Puzzle,
   Code2,
   Package,
+  MessageCircle,
+  Github,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -39,6 +41,18 @@ export function ProductsSection() {
       label: t("products.categories.api"),
       count: t("products.counts.comingSoon"),
       desc: t("products.descs.api"),
+    },
+    {
+      icon: MessageCircle,
+      label: "AI Services",
+      count: "Available",
+      desc: "WhatsApp automation for business",
+    },
+    {
+      icon: Github,
+      label: "Open Source",
+      count: "MIT",
+      desc: "Free developer tools & skills",
     },
   ];
   return (
