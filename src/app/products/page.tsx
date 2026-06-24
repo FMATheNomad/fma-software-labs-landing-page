@@ -121,6 +121,11 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
               <span className="text-[10px] text-muted-foreground/50 font-mono">
                 Private repository — contact for access
               </span>
+              {product.slug === "debtwar" && (
+                <Button variant="outline" disabled className="gap-2 text-xs ml-auto">
+                  We&apos;re selling this game! Contact us for best deal!
+                </Button>
+              )}
             </div>
           ) : product.status === "dev" ? (
             <Button variant="outline" disabled className="gap-2 flex-1 opacity-50 cursor-not-allowed">
