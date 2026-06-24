@@ -222,74 +222,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Prompt Products */}
-      <section id="prompts" className="section-padding relative">
-        <div className="absolute inset-0 grid-overlay opacity-30" />
-        <div className="section-container relative">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Puzzle className="h-4 w-4 text-primary" />
-            </div>
-            <h2 className="text-2xl font-bold">Prompt Products</h2>
-            <Badge variant="cyan" className="text-xs">Digital Download</Badge>
-          </div>
-          <p className="text-muted-foreground mb-8 max-w-2xl">
-            Premium AI prompt collections for developers. Each toolkit contains 50 battle-tested prompts optimized for ChatGPT, Claude, Gemini, and DeepSeek.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {promptProducts.map((product) => (
-              <PromptProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Boilerplate (Coming Soon) */}
-      <section className="section-padding pt-0 relative">
-        <div className="section-container">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Code2 className="h-4 w-4 text-primary" />
-            </div>
-            <h2 className="text-2xl font-bold">Boilerplate Micro-SaaS & Micro-GaaS</h2>
-            <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
-          </div>
-          <p className="text-muted-foreground mb-8 max-w-2xl">
-            Ready-to-ship starter templates for Telegram bots, FastAPI backends, and AI-powered micro-services. Skip the setup, start building.
-          </p>
-          <div className="p-12 rounded-xl border border-border/50 bg-card/20 text-center">
-            <Code2 className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-2">Under Development</h3>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Boilerplate templates for Telegram mini-apps, AI micro-services, and SaaS backends are in the works. Join the newsletter to get early access.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Software API (Coming Soon) */}
-      <section className="section-padding pt-0 relative">
-        <div className="section-container">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <Package className="h-4 w-4 text-primary" />
-            </div>
-            <h2 className="text-2xl font-bold">Software API</h2>
-            <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
-          </div>
-          <p className="text-muted-foreground mb-8 max-w-2xl">
-            Ready-to-use API services for developers. Deploy via RapidAPI and integrate in minutes.
-          </p>
-          <div className="p-12 rounded-xl border border-border/50 bg-card/20 text-center">
-            <Globe className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-2">Coming Soon on RapidAPI</h3>
-            <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              We&apos;re building API services for image processing, data validation, currency conversion, and AI-powered content moderation. Stay tuned.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Open Source */}
       <section className="section-padding pt-0 relative">
         <div className="section-container">
@@ -386,6 +318,74 @@ export default function ProductsPage() {
                 <ExternalLink className="h-3.5 w-3.5" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Prompt Products */}
+      <section id="prompts" className="section-padding relative">
+        <div className="absolute inset-0 grid-overlay opacity-30" />
+        <div className="section-container relative">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Puzzle className="h-4 w-4 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">Prompt Products</h2>
+            <Badge variant="cyan" className="text-xs">Digital Download</Badge>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Premium AI prompt collections for developers. Each toolkit contains 50 battle-tested prompts optimized for ChatGPT, Claude, Gemini, and DeepSeek.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {promptProducts.map((product) => (
+              <PromptProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Boilerplate (Coming Soon) */}
+      <section className="section-padding pt-0 relative">
+        <div className="section-container">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Code2 className="h-4 w-4 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">Boilerplate Micro-SaaS & Micro-GaaS</h2>
+            <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Ready-to-ship starter templates for Telegram bots, FastAPI backends, and AI-powered micro-services. Skip the setup, start building.
+          </p>
+          <div className="p-12 rounded-xl border border-border/50 bg-card/20 text-center">
+            <Code2 className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-2">Under Development</h3>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Boilerplate templates for Telegram mini-apps, AI micro-services, and SaaS backends are in the works. Join the newsletter to get early access.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Software API (Coming Soon) */}
+      <section className="section-padding pt-0 relative">
+        <div className="section-container">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+              <Package className="h-4 w-4 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold">Software API</h2>
+            <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Ready-to-use API services for developers. Deploy via RapidAPI and integrate in minutes.
+          </p>
+          <div className="p-12 rounded-xl border border-border/50 bg-card/20 text-center">
+            <Globe className="h-12 w-12 text-muted-foreground/40 mx-auto mb-4" />
+            <h3 className="font-semibold text-lg mb-2">Coming Soon on RapidAPI</h3>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              We&apos;re building API services for image processing, data validation, currency conversion, and AI-powered content moderation. Stay tuned.
+            </p>
           </div>
         </div>
       </section>
