@@ -32,6 +32,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { products, promptProducts } from "@/lib/constants";
+import { ClientProjectsSection } from "@/components/sections/ClientProjects";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   game: <Gamepad2 className="h-4 w-4" />,
@@ -321,6 +322,9 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      {/* Client Projects */}
+      <ClientProjectsSection />
 
       {/* Prompt Products */}
       <section id="prompts" className="section-padding relative">
