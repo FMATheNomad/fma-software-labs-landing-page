@@ -236,6 +236,34 @@ export default function ProductsPage() {
           <p className="text-muted-foreground mb-8 max-w-2xl">
             Free tools for the developer community. Open source, MIT licensed.
           </p>
+          {/* Developer Tools */}
+          <div className="mb-8">
+            <h3 className="text-sm font-semibold text-muted-foreground mb-4">Developer Tools</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { name: "AIVerify", desc: "Detect AI hallucinations in code — invented APIs, hardcoded credentials, infinite loops — before they reach production.", repo: "https://github.com/FMATheNomad/aiverify" },
+                { name: "CodeMap", desc: "VS Code extension that generates an interactive D3.js dependency graph of any codebase. Find circular deps, navigate visually.", repo: "https://github.com/FMATheNomad/codemap" },
+                { name: "ContextPack", desc: "CLI that packages only relevant files as AI-ready context using dependency-graph scoring.", repo: "https://github.com/FMATheNomad/contextpack" },
+                { name: "DepCheck AI", desc: "SCans npm, PyPI, and crates.io deps and produces a health score (0-100) with replacement recommendations.", repo: "https://github.com/FMATheNomad/depcheckai" },
+                { name: "SkillSmith", desc: "CLI to write AI agent skills once and export to Claude Code, Cursor, or OpenCode formats.", repo: "https://github.com/FMATheNomad/skillsmith" },
+              ].map((p) => (
+                <div key={p.name} className="p-4 rounded-lg border border-border/50 bg-card/30 backdrop-blur-sm">
+                  <h4 className="font-semibold text-sm mb-2">{p.name}</h4>
+                  <p className="text-xs text-muted-foreground mb-3">{p.desc}</p>
+                  <Button variant="outline" size="sm" className="gap-2 text-xs" asChild>
+                    <Link href={p.repo} target="_blank">
+                      <Github className="h-3.5 w-3.5" />
+                      GitHub
+                      <ExternalLink className="h-3 w-3" />
+                    </Link>
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Agent Skills */}
+          <h3 className="text-sm font-semibold text-muted-foreground mb-4">Agent Skills</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {[
               {
@@ -251,25 +279,22 @@ export default function ProductsPage() {
                 skills: "https://skills.sh/FMATheNomad/railway-deploy-skill/railway-deploy",
               },
             ].map((oss) => (
-              <div key={oss.name} className="p-6 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm">
-                <div className="flex items-center gap-2 mb-3">
-                  <Star className="h-4 w-4 text-neon-green/70" />
-                  <h3 className="font-semibold">{oss.name}</h3>
-                </div>
+              <div key={oss.name} className="p-5 rounded-xl border border-border/50 bg-card/30 backdrop-blur-sm">
+                <h4 className="font-semibold mb-2">{oss.name}</h4>
                 <p className="text-sm text-muted-foreground mb-4">{oss.desc}</p>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <Button variant="outline" size="sm" className="gap-2 text-xs" asChild>
                     <Link href={oss.repo} target="_blank">
-                      <Github className="h-4 w-4" />
+                      <Github className="h-3.5 w-3.5" />
                       GitHub
-                      <ExternalLink className="h-3.5 w-3.5" />
+                      <ExternalLink className="h-3 w-3" />
                     </Link>
                   </Button>
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <Button variant="outline" size="sm" className="gap-2 text-xs" asChild>
                     <Link href={oss.skills} target="_blank">
-                      <Download className="h-4 w-4" />
+                      <Download className="h-3.5 w-3.5" />
                       skills.sh
-                      <ExternalLink className="h-3.5 w-3.5" />
+                      <ExternalLink className="h-3 w-3" />
                     </Link>
                   </Button>
                 </div>
