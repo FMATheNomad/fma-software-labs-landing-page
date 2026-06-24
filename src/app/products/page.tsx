@@ -279,6 +279,9 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Client Projects */}
+      <ClientProjectsSection />
+
       {/* AI Services */}
       <section className="section-padding pt-0 relative">
         <div className="section-container">
@@ -322,9 +325,6 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
-
-      {/* Client Projects */}
-      <ClientProjectsSection />
 
       {/* Prompt Products */}
       <section id="prompts" className="section-padding relative">
