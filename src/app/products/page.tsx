@@ -111,7 +111,17 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
 
         {/* Actions */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4 border-t border-border/50">
-          {product.status === "dev" ? (
+          {product.status === "park" ? (
+            <div className="flex items-center gap-3 flex-1">
+              <Button variant="outline" disabled className="gap-2 opacity-50 cursor-not-allowed">
+                <Github className="h-4 w-4" />
+                Private Repo
+              </Button>
+              <span className="text-[10px] text-muted-foreground/50 font-mono">
+                Private repository — contact for access
+              </span>
+            </div>
+          ) : product.status === "dev" ? (
             <Button variant="outline" disabled className="gap-2 flex-1 opacity-50 cursor-not-allowed">
               <Bot className="h-4 w-4" />
               In Development
@@ -125,18 +135,6 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
               </Link>
             </Button>
           )}
-          <div className="flex gap-2">
-            <Button variant="outline" size="icon" asChild>
-              <Link href={product.github} target="_blank" aria-label={`${product.name} GitHub`}>
-                <Github className="h-4 w-4" />
-              </Link>
-            </Button>
-            {product.slug === "debtwar" && (
-              <Button variant="outline" disabled className="gap-2 text-xs">
-                We&apos;re selling this game!
-              </Button>
-            )}
-          </div>
         </div>
       </div>
     </div>

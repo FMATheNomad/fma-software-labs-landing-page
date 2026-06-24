@@ -8,7 +8,7 @@ export const products = [
       "Smart debt management assistant powered by AI. Upload bill screenshots and let AI extract the details — amount, platform, due date. Get automatic reminders before you miss a payment.",
     longDescription:
       "JatuhTempo is an AI-powered debt management assistant for Indonesian users. Upload a screenshot of your bill, and the AI (DeepSeek) extracts the amount, platform, and due date automatically. Supports Akulaku, Kredivo, Shopee PayLater, and more. Get reminders at H-7, H-3, H-1, and on due date. Track all your debts, view monthly summaries, and never miss a payment again.",
-    status: "dev",
+    status: "park",
     category: "finance",
     cta: { text: "Open Dashboard", url: "https://jatuhtempo.up.railway.app" },
     tags: ["AI", "Telegram", "Finance", "OCR", "Debt Management"],
