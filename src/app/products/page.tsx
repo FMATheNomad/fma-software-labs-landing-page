@@ -10,6 +10,7 @@ import {
   Gamepad2,
   Landmark,
   Sparkles,
+  Search,
   ShoppingCart,
   Puzzle,
   Code2,
@@ -58,14 +59,18 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
         {/* Header */}
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-4">
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden ring-1 ring-border bg-card">
-              <Image
-                src={product.logoPath}
-                alt={`${product.name} logo`}
-                fill
-                className="object-contain p-1"
-                sizes="56px"
-              />
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden ring-1 ring-border bg-card flex items-center justify-center">
+              {(product as any).logoIcon ? (
+                <Search className="h-6 w-6 text-muted-foreground" />
+              ) : (
+                <Image
+                  src={product.logoPath}
+                  alt={`${product.name} logo`}
+                  fill
+                  className="object-contain p-1"
+                  sizes="56px"
+                />
+              )}
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">

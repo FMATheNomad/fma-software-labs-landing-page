@@ -111,6 +111,34 @@ export const products = [
     ],
     tech: ["Python", "python-telegram-bot", "PostgreSQL", "APScheduler"],
   },
+  {
+    id: 5,
+    name: "FmalResearch",
+    slug: "fmalresearch",
+    tagline: "AI-Powered Research Assistant",
+    description:
+      "AI-powered research assistant that searches the web, academic papers, and your documents — then produces structured research reports with citations.",
+    longDescription:
+      "FmalResearch is an AI research assistant that orchestrates web search (SearXNG), semantic search (MeiliSearch), academic paper retrieval (Semantic Scholar), and document scraping to produce comprehensive research reports. Features WebSocket-based streaming results, user auth with email verification, and Polar.sh payment integration.",
+    status: "dev",
+    category: "ai",
+    cta: { text: "View Dashboard", url: "#" },
+    tags: ["AI", "Research", "Search", "Tool", "Academia"],
+    logoPath: "",
+    logoIcon: "Search",
+    github: "https://github.com/FMATheNomad/fmalresearch",
+    features: [
+      "Multi-source research: web, academic papers, documents",
+      "SearXNG meta-search engine integration",
+      "Semantic Scholar API for academic papers",
+      "WebSocket streaming results",
+      "BGE reranker for relevance scoring",
+      "User auth with email verification",
+      "Polar.sh payment integration",
+      "Docker Compose deployment ready",
+    ],
+    tech: ["Python", "FastAPI", "Next.js", "React", "PostgreSQL", "Redis", "SearXNG", "MeiliSearch"],
+  },
 ];
 
 export const companyInfo = {
