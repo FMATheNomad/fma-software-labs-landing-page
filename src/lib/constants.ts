@@ -39,7 +39,8 @@ export const products = [
     category: "ai",
     cta: { text: "View Dashboard", url: "https://uyuhanjaya.up.railway.app" },
     tags: ["Construction", "WhatsApp", "AI", "Project Management", "Indonesia"],
-    logoPath: "/assets/uyuhan-favicon.svg",
+    logoPath: "",
+    logoIcon: "Building2",
     github: "https://github.com/FMATheNomad/uyuhan-jaya",
     features: [
       "QR code attendance with selfie photo",
